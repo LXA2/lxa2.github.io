@@ -129,6 +129,9 @@
     </head>
     <body>
         <div>
+            <!-- <h1 id="pagetitle" title="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
+                哔哩哔哩经验计算器
+            </h1> -->
             <div class="container" title="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
                 哔哩哔哩经验计算器
             </div>
@@ -138,6 +141,9 @@
                     bilibili@3840x2160
                 </a>
             </h4>
+            <!--
+                css
+            -->
             <script>
                 function enter(){
                     document.getElementById("name").style.color="rgb(255,50,50)"
@@ -146,15 +152,22 @@
                     document.getElementById("name").style.color="#307190"
                 }
                 var errormsg=0
-                var explegal=0
-                var ifsm="0"
-                var a1=0
-                var a2=0
-                var a3=0
-                var a4=0
+                var explegal=0//exp合法判断
+                var ifsm="0"//ifSpendMoney
+                var a1=0//1
+                var a2=0//2
+                var a3=0//3
+                var a4=0//4
             </script>
+            <!--
+                /css
+            -->
         </div>
+        <!--
+            question
+        -->
         <div style="height:40px"></div>
+        <!--1-->
         <div>
             <input type="number" id="experience" style="height:20px;font-size: 15px;width: 150px;" step="1" oninput="exp_examine();a1=1;">
             <span class="questiontext">
@@ -165,6 +178,7 @@
         </div>
         <hr>
         <div style="height: 20px;"></div>
+        <!--2-->
         <div class="questiontext">
             你愿意购买硬币吗
         </div>
@@ -192,6 +206,7 @@
         <script>
             document.getElementById("hq1").style.display="none"
         </script>
+        <!--3-->
         <hr>
         <div style="height: 20px;"></div>
         <div class="questiontext">
@@ -207,6 +222,7 @@
                 无
             </span>
         </div>
+        <!--3.1-->
         <div id="hq2">
             <div style="height: 20px;"></div>
             <input type="number" style="height:20px;font-size: 15px;width: 100px;" value="0" id="coin">
@@ -217,6 +233,7 @@
         <script>
             document.getElementById("hq2").style.display="none"
         </script>
+        <!--4-->
         <hr>
         <div>
             <div style="height: 20px;"></div>
@@ -225,6 +242,10 @@
                 你有几个小号？
             </span>
         </div>
+        <!--
+            /question
+        -->
+        <hr>
         <div style="height: 20px;"></div>
         <div>
             <button onclick="calculate()" style="height:50px;font-size: 25px;width: 120px;background-color: rgb(156, 156, 156);">
@@ -265,6 +286,10 @@
                 </span>
             </a>
         </div>
+
+        <!--
+            function
+        -->
         <script>
             function showhq (n) {
                 document.getElementById("hq"+n).style.display="block";
@@ -274,9 +299,11 @@
             }
             function exp_examine () {
                 var f1=document.getElementById("experience").value;
+                // setInterval(function(){
                     var f1=document.getElementById("experience").value
                     var experror =document.getElementById("experror")
                     var floatdetect =RegExp("[.]").test(f1);
+                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!
                     console.log (floatdetect)
                     if (floatdetect == false) {
                         if (f1<0){
@@ -323,8 +350,15 @@
                     else {
                         experror.innerText="请输入整数"
                     }
+                // },200);
             }
         </script>
+        <!--
+            /function
+        -->
+        <!--
+            calculate
+        -->
         <script>
             function calculate () {
                 var exp=document.getElementById("experience").value;
@@ -357,14 +391,16 @@
                 }
             }
         </script>
+        <!--计算-->
         <script>
             var coinRemain2
             var coinRemain3
             function calc () {
-                var c1=Math.abs(Math.floor(Number(document.getElementById("experience").value)))
-                var c2=Math.abs(Math.floor(Number(document.getElementById("money").value)))
-                var c3=Math.abs(Math.floor(Number(document.getElementById("coin").value)))
-                var c4=Math.abs(Math.floor(Number(document.getElementById("accNum").value)))
+                var c1=Math.abs(Math.floor(Number(document.getElementById("experience").value)))//-----c1  =  经验值
+                var c2=Math.abs(Math.floor(Number(document.getElementById("money").value)))//----------c2  =  愿意花的钱（元）
+                var c3=Math.abs(Math.floor(Number(document.getElementById("coin").value)))//-----------c3  =  投币人数/月
+                var c4=Math.abs(Math.floor(Number(document.getElementById("accNum").value)))//---------c4  =  小号数量
+                if (c2<10) {
                     var coinRemain = c2*10/7
                 }
                 else if (c2>=10&&c2<100) {
@@ -378,6 +414,7 @@
                 }
                 coinRemain2=coinRemain
                 expRemain=28800-c1
+                // define-end
                 if (c2!=0){
                     var i=0
                     var i0=0
@@ -429,6 +466,8 @@
                 output ();
             }
         </script>
+        <!--/计算-->
+        <!--输出-->
         <script>
             function output () {
                 document.getElementById("rAF").innerText="共计消耗硬币"+(Math.floor(coinRemain2-coinRemain3))+"枚 , "+"还剩余硬币"+Math.floor(coinRemain3)+"枚  预计还需";
@@ -436,5 +475,9 @@
                 document.getElementById("rAA").innerText="达到六级(±3天),(每天登录,观看一次,投完所有的币,每月在直播中心签到累计五天,多投稿,所有小号每天登录给大号的稿件投币)"+"         "+"努力让你的投稿获得更多投币,多开一些小号,还能无限缩短达到六级所需时间！！！";;
             }
         </script>
+        <!--/输出-->
+        <!--
+            /calculate
+        -->
     </body>
 </html>
