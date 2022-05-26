@@ -7,136 +7,23 @@
         <meta charset="UTF-8">
         <title>哔哩哔哩经验计算器</title>
         <style>
-            /*body {background-image: url('http://cdn.u1.huluxia.com/g4/M02/03/81/rBAAdmKEkI2AcSi_ADLakZL3bTk892.jpg');}
-            */
-            body{background-color: black;}
+            body {background-image: url('http://cdn.u1.huluxia.com/g4/M02/03/81/rBAAdmKEkI2AcSi_ADLakZL3bTk892.jpg');}
+           /* body{background-color: black;}*/
             a{text-decoration:none}
             .result {color: red;font-size:30px;font-weight: 600;font-family: Arial, Helvetica, sans-serif;}
-            .ra0 {color: rgb(208, 208, 208);font-size:15px;font-family: Arial, Helvetica, sans-serif;}
+            .ra0 {color: rgb(0, 0, 0);font-size:15px;font-family: Arial, Helvetica, sans-serif;}
             .charge {color:rgb(255,0,0);font-size:10px;}
             #pagetitle {text-align: center;color:rgb(39, 144, 185);}
-            #name {text-align:center;color:rgb(47, 146, 186);}
+            #name {text-align:center;color:rgb(29, 100, 128);}
             #name1 {text-align:center;color:rgb(29, 100, 128);}
-            .questiontext {color:rgb(255, 255, 255);font-size: 18px;}
-            .question {color:rgb(142, 142, 142)}
-        </style>
-        <style>
-            .container {
-                font-family: 'Audiowide';
-
-            text-align: center;
-
-
-
-            font-size: 48px;
-
-            color: #fff;
-
-            -webkit-animation: Glow 1.5s ease infinite alternate;
-
-                    animation: Glow 1.5s ease infinite alternate;
-
-            }
-
-            @-webkit-keyframes Glow {
-
-            from {
-
-                text-shadow: 
-                            
-                 0 0 10px #fff,
-
-                     0 0 20px #fff,
-
-                     0 0 30px #fff,
-
-                     0 0 40px #00a67c,
-
-                     0 0 70px #00a67c,
-
-                     0 0 80px #00a67c,
-
-                     0 0 100px #00a67c,
-
-                     0 0 150px #00a67c;
-
-            }
-
-            to {
-
-                text-shadow: 0 0 5px #fff,
-
-                            0 0 10px #fff,
-
-                            0 0 15px #fff,
-
-                            0 0 20px #00a67c,
-
-                            0 0 35px #00a67c,
-
-                            0 0 40px #00a67c,
-
-                            0 0 50px #00a67c,
-
-                            0 0 75px #00a67c;
-
-            }
-
-            }
-
-            @keyframes Glow {
-
-            from {
-
-                text-shadow: 0 0 10px #fff,
-
-                            0 0 20px #fff,
-
-                            0 0 30px #fff,
-
-                            0 0 40px #00a67c,
-
-                            0 0 70px #00a67c,
-
-                            0 0 80px #00a67c,
-
-                            0 0 100px #00a67c,
-
-                            0 0 150px #00a67c;
-
-            }
-
-            to {
-
-                text-shadow: 0 0 5px #fff,
-
-                            0 0 10px #fff,
-
-                            0 0 15px #fff,
-
-                            0 0 20px #00a67c,
-
-                            0 0 35px #00a67c,
-
-                            0 0 40px #00a67c,
-
-                            0 0 50px #00a67c,
-
-                            0 0 75px #00a67c;
-
-            }
-
-            }
+            .questiontext {color:rgb(68, 68, 68);font-size: 18px;}
         </style>
     </head>
     <body>
         <div>
-            <!-- <h1 id="pagetitle" title="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
+            <h1 id="pagetitle" title="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
                 哔哩哔哩经验计算器
-            </h1> -->
-            <div class="container" title="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
-                哔哩哔哩经验计算器
-            </div>
+            </h1>
             <h4 id="name1">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://space.bilibili.com/591357735" target="_blank" title="前往UP的主页" id="name" onmouseenter="enter()" onmouseleave="leave()">
@@ -186,13 +73,9 @@
         </div>
         <div>
             <input type="radio" name="ifspendmoney" id="ifspendmoney" value="y" onclick="showhq(1);ifsm='yes';a2=1;">
-            <span class="question">
-                愿意
-            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            愿意&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="ifspendmoney" id="ifspendmoney" value="n" onclick="hidehq(1);ifsm='no';a2=1;">
-            <span class="question">
-                不愿意
-            </span>
+            不愿意
         </div>
         <div id="hq1">
             <div style="height: 20px;"></div>
@@ -216,13 +99,9 @@
         </div>
         <div>
             <input type="radio" name="ifup" value="yes" onclick="showhq(2);a3=1;">
-            <span class="question">
-                有
-            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="ifup" value="no" onclick="hidehq(2);a3=1;">
-            <span class="question">
-                无
-            </span>
+            无
         </div>
         <!--3.1-->
         <div id="hq2">
@@ -250,7 +129,7 @@
         <hr>
         <div style="height: 20px;"></div>
         <div>
-            <button onclick="calculate()" style="height:50px;font-size: 25px;width: 120px;background-color: rgb(156, 156, 156);">
+            <button onclick="calculate()" style="height:50px;font-size: 25px;width: 120px;background-color: rgb(255, 255, 0);">
                 计算
             </button>
         </div>
@@ -270,9 +149,7 @@
         <div style="height: 20px;"></div>
         
         <p>
-            <span style="color:rgb(255, 247, 157)">
-                制作不易,求三连&nbsp;<a href="https://www.bilibili.com/video/BV"><span style="color:rgb(255, 255, 255)">点击前往</span></a>&nbsp;,谢谢。你也可以获得10~20经验
-            </span>
+            制作不易,求三连&nbsp;<a href="https://www.bilibili.com/video/BV">点击前往</a>&nbsp;,谢谢。你也可以获得10~20经验
         </p>
         <div style="height: 5px;"></div>
         <div class="charge">
