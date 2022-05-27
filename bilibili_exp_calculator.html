@@ -361,10 +361,11 @@
             var coinRemain2
             var coinRemain3
             function calc () {
-                var c1=Math.abs(Math.floor(Number(document.getElementById("experience").value)))
-                var c2=Math.abs(Math.floor(Number(document.getElementById("money").value)))
-                var c3=Math.abs(Math.floor(Number(document.getElementById("coin").value)))
-                var c4=Math.abs(Math.floor(Number(document.getElementById("accNum").value)))
+                var c1=Math.abs(Math.floor(Number(document.getElementById("experience").value)))//-----c1  =  经验值
+                var c2=Math.abs(Math.floor(Number(document.getElementById("money").value)))//----------c2  =  愿意花的钱（元）
+                var c3=Math.abs(Math.floor(Number(document.getElementById("coin").value)))//-----------c3  =  投币人数/月
+                var c4=Math.abs(Math.floor(Number(document.getElementById("accNum").value)))//---------c4  =  小号数量
+                if (c2<10) {
                     var coinRemain = c2*10/7
                 }
                 else if (c2>=10&&c2<100) {
@@ -378,6 +379,7 @@
                 }
                 coinRemain2=coinRemain
                 expRemain=28800-c1
+                // define-end
                 if (c2!=0){
                     var i=0
                     var i0=0
