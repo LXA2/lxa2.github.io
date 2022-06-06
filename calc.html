@@ -52,6 +52,10 @@
         </style>
     </head>
     <body>
+        <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
+        <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
+        <button onclick="document.getElementById('mobileBody').style.display='block';">m1</button>
+        <button onclick="document.getElementById('mobileBody').style.display='none';">m2</button>
         <div id="PCBody">
             <div class="pheader">
                 <div style="height:30px;">
@@ -68,29 +72,21 @@
                 </div>
             </div>
             <div class="pfoot">
-                <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
-                <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
-                <button onclick="document.getElementById('mobileBody').style.display='block';">m1</button>
-                <button onclick="document.getElementById('mobileBody').style.display='none';">m2</button>
             </div>
         </div>
         <div id="mobileBody">
             aaa
-            <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
-            <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
-            <button onclick="document.getElementById('mobileBody').style.display='block';">m1</button>
-            <button onclick="document.getElementById('mobileBody').style.display='none';">m2</button>
         </div>
         <script>
             // var a=1
             // setInterval(function(){
                 if (device=="PC") {
                     document.getElementById("mobileBody").style.display="none";
-                    console.log(1)
+                    console.log("mobile body hidden")
                 }
                 else if (device=="mobile") {
                     document.getElementById("PCBody").style.display="none";
-                    console.log(2)
+                    console.log("PC bo")
                 }
             // },500);
         </script>
