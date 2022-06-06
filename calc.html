@@ -4,26 +4,87 @@
         <meta charset="utf-8">
         <meta name="keywords" content="哔哩哔哩经验计算器">
         <meta name="description" content="计算达到六级所需时间">
+        <title>哔哩哔哩经验计算器</title>
         <script>
+            var device
             function IsPhone() {
-                //获取浏览器navigator对象的userAgent属性（浏览器用于HTTP请求的用户代理头的值）
                 var info = navigator.userAgent;
-                //通过正则表达式的test方法判断是否包含“Mobile”字符串
                 var isPhone = /mobile/i.test(info);
-                //如果包含“Mobile”（是手机设备）则返回true
                 return isPhone;
+                console.log(info)
             }
         </script>
         <script>
             if (IsPhone()==true){
-                alert("mobile")
+                device="mobile"
+                console.log("mobile")
             }
             else {
-                alert("PC")
+                device="PC"
+                console.log("PC")
             }
         </script>
+        <style>
+            .pheader {
+                 text-align: center;
+                 font-size: 50px;
+                 color: rgba(0, 0, 0, 0.83);
+                 background-color: rgba(255, 255, 0, 0.381);
+                 height: 150px;
+            }
+            .pmain {
+                background-color: rgb(236, 246, 255);
+            }
+            .qQuestion {margin: auto;
+                width: 60%;
+                border: 3px solid #73ad2100;
+                min-width: 600px;
+                background-color:rgba(124, 213, 255, 0.521)
+            }
+            
+        </style>
+        <style>
+            .mheader {text-align: center;
+                font-size: 0rem;
+            }
+        </style>
     </head>
     <body>
-        
+        <div id="PCBody">
+            <div class="pheader">
+                <div style="height:30px;">
+                </div>
+                <div>
+                    <span style="width:auto;">
+                        哔哩哔哩经验计算器
+                    </span>
+                </div>
+            </div>
+            <div class="pmain" >
+                <div class="qQuestion">
+                    <p><b>aaa</b></p>
+                </div>
+            </div>
+            <div class="pfoot">
+
+            </div>
+        </div>
+        <div id="mobileBody">
+            aaaa
+        </div>
     </body>
+    <script>
+        if (device="PC") {
+            document.getElementById("mobileBody").style.display="none";
+            console.log(1)
+        }
+        else if (device="mobile") {
+            document.getElementById("PCBody").style.display="none";
+            console.log(2)
+        }
+        else {
+            document.getElementById("mobileBody").style.display="none";
+            console.log(3)
+        }
+    </script>
 </html>
