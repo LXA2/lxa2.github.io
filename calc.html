@@ -74,19 +74,20 @@
         <div id="mobileBody">
             aaaa
         </div>
+        <script>
+            if (device="PC") {
+                document.getElementById("mobileBody").style.display="none";
+                console.log(1)
+            }
+            else if (device="mobile") {
+                document.getElementById("PCBody").style.display="none";
+                console.log(2)
+            }
+            // else {
+            //     document.getElementById("mobileBody").style.display="none";
+            //     console.log(3)
+            // }
+        </script>
     </body>
-    <script>
-        if (device="PC") {
-            document.getElementById("mobileBody").style.display="none";
-            console.log(1)
-        }
-        else if (device="mobile") {
-            document.getElementById("PCBody").style.display="none";
-            console.log(2)
-        }
-        else {
-            document.getElementById("mobileBody").style.display="none";
-            console.log(3)
-        }
-    </script>
+    
 </html>
