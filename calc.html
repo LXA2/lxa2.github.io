@@ -11,39 +11,54 @@
                 var info = navigator.userAgent;
                 var isPhone = /mobile/i.test(info);
                 return isPhone;
-                console.log(info)
             }
         </script>
         <script>
             if (IsPhone()==true){
                 device="mobile"
                 console.log("mobile")
-                alert("mobile")
             }
             else {
                 device="PC"
                 console.log("PC")
-                alert("PC")
             }
+            var pExpLegal=false
+            var pExp
+            var pExpRemain
         </script>
         <style>
+            body {
+                background-image: url(/img/1.jpg);
+            }
             .pheader {
                  text-align: center;
-                 font-size: 50px;
+                 font-size: 35px;
                  color: rgba(0, 0, 0, 0.83);
-                 background-color: rgba(255, 255, 0, 0.381);
+                 background-color: rgba(249, 249, 41, 0.455);
                  height: 150px;
             }
             .pmain {
-                background-color: rgb(236, 246, 255);
+                background-color: rgba(196, 228, 255, 0.526);
             }
             .qQuestion {margin: auto;
                 width: 60%;
                 border: 3px solid #73ad2100;
                 min-width: 600px;
-                background-color:rgba(124, 213, 255, 0.521)
+                background-color:rgba(187, 233, 255, 0)
             }
-            
+            .pBlankDiv {
+                height: 50px;
+            }
+            .pBlankDiv0 {
+                height: 100px;
+            }
+            .pQuestionText {
+                font-size: 19px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-left: 20px;
+                margin-bottom: 20px;
+            }
+
         </style>
         <style>
             .mheader {text-align: center;
@@ -52,10 +67,6 @@
         </style>
     </head>
     <body>
-        <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
-        <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
-        <button onclick="document.getElementById('mobileBody').style.display='block';">m1</button>
-        <button onclick="document.getElementById('mobileBody').style.display='none';">m2</button>
         <div id="PCBody">
             <div class="pheader">
                 <div style="height:30px;">
@@ -68,7 +79,64 @@
             </div>
             <div class="pmain" >
                 <div class="qQuestion">
-                    <p><b>aaa</b></p>
+                    <!--1-->
+                    <div class="pBlankDiv0"></div>
+                    <div>
+                        <div class="pQuestionText">
+                                你的哔哩哔哩经验值
+                        </div>
+                        <div>
+                            <input type="number" value="" id="pq1" style="margin-left: 160px;margin-bottom: 10px;height: 25px;width: 200px;font-size: 22px;" oninput="this.value=this.value.replace(/\D/g);var a=document.getElementById('pq1').value;var b=document.getElementById('pLevel');var c=document.getElementById('hide');if(a>0&&a<200){pExpLegal=true;b.innerText='等级:Lv1';c.style.display='block';}else if(a>=200&&a<1500){pExpLegal=true;b.innerText='等级:Lv2';c.style.display='block';}else if(a>=1500&&a<4500){pExpLegal=true;b.innerText='等级:Lv3';c.style.display='block';}else if(a>=4500&&a<10800){pExpLegal=true;b.innerText='等级:Lv4';c.style.display='block';}else if(a>=10800&&a<28700){pExpLegal=true;b.innerText='等级:Lv5';c.style.display='block';}else if(a>=28700&&a<28800){pExpLegal=true;b.innerText='你五天内就可到六级，坚持登录、投币就行啦，无需计算';c.style.display='none';}else if(a==0){pExpLegal=false;b.innerText='';c.style.display='block';}else if(a>28800){pExpLegal=false;b.innerText='已达到六级，无需计算';c.style.display='none';};pExpCalc()">
+                            <span style="margin-left: 40px;font-size: 20px;" id="pLevel"></span>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <hr>
+                    <div id="hide">
+                    <div class="pBlankDiv"></div>
+                    <div>
+                        <div class="pQuestionText">
+                            你愿意花多少钱买硬币&nbsp;&nbsp;&#40;元&#41;
+                        </div>
+                        <div>
+                            <input type="range" style="margin-left: 160px;margin-bottom: 5px;width: 450px;" value="0" min="0" max="0" >
+                        </div>
+                        <div>
+                            <input type="number" style="margin-left: 160px;margin-bottom: 10px;height: 25px;width: 200px;font-size: 22px;" oninput="this.value=this.value.replace(/\D/g);this.value=pMoney(this.value)">
+                        </div>
+                    </div>
+                    <!--3-->
+                    <hr>
+                    <div class="pBlankDiv"></div>
+                    <div>
+                        3
+                    </div>
+                    <!--4-->
+                    <hr>
+                    <div class="pBlankDiv"></div>
+                    <div>
+                        4
+                    </div>
+                    <!--5-->
+                    <hr>
+                    <div class="pBlankDiv"></div>
+                    <div>
+                        5
+                    </div>
+                    <!--6-->
+                    <hr>
+                    <div class="pBlankDiv"></div>
+                    <div>
+                        6
+                    </div>
+                    <!--7-->
+                    <hr>
+                    <div class="pBlankDiv"></div>
+                    <div>
+                        7
+                    </div>
+                    <hr>
+                    </div>
                 </div>
             </div>
             <div class="pfoot">
@@ -78,18 +146,31 @@
             aaa
         </div>
         <script>
-            // var a=1
-            // setInterval(function(){
-                if (device=="PC") {
-                    document.getElementById("mobileBody").style.display="none";
-                    console.log("mobile body hidden")
-                }
-                else if (device=="mobile") {
-                    document.getElementById("PCBody").style.display="none";
-                    console.log("PC bo")
-                }
-            // },500);
+            if (device=="PC") {
+                document.getElementById("mobileBody").style.display="none";
+                console.log("mobile body hidden")
+            }
+            else if (device=="mobile") {
+                document.getElementById("PCBody").style.display="none";
+                console.log("PC bo")
+            }
         </script>
+        <script>
+            function pExpCalc () {
+                pExp=document.getElementById("pq1")
+                if (pExpLegal==true) {
+                    pExpRemain=28800-pExp
+                }
+            }
+            
+            function pMoney (value) {
+                
+            }
+        </script>
+        <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
+        <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
+        <button onclick="document.getElementById('mobileBody').style.display='block';">m1</button>
+        <button onclick="document.getElementById('mobileBody').style.display='none';">m2</button>
     </body>
     
 </html>
