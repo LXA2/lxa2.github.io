@@ -26,26 +26,33 @@
             var pExp
             var pExpRemain
             var pMoneyMax
+            var pMoneyi=0
         </script>
         <style>
-            /* body {
-                background-image: url(/img/1.jpg);
-            } */
+            body {
+                margin: 0%;
+            } 
             .pheader {
                  text-align: center;
                  font-size: 35px;
                  color: rgba(0, 0, 0, 0.83);
                  background-color: rgba(249, 249, 41, 0.455);
                  height: 150px;
+                 margin: 0ch;
             }
             .pmain {
                 background-color: rgba(196, 228, 255, 0.526);
+                
             }
             .qQuestion {margin: auto;
                 width: 60%;
                 border: 3px solid #73ad2100;
-                min-width: 600px;
+                min-width: 830px;
                 background-color:rgba(187, 233, 255, 0)
+            }
+            .pFoot{
+                background-color: white;
+                
             }
             .pBlankDiv {
                 height: 50px;
@@ -59,11 +66,18 @@
                 margin-left: 20px;
                 margin-bottom: 20px;
             }
-
+            .svgDownload {
+                width: 100px;
+                background-position: right;
+                position:fixed;
+            
+                
+            }
         </style>
         <style>
             .mheader {text-align: center;
                 font-size: 0rem;
+                margin-right: 0%;
             }
         </style>
     </head>
@@ -78,6 +92,12 @@
                     </span>
                 </div>
             </div>
+            <div style="position: fixed;right: 20px;top: 60%;width: 100px;" title="点击下载离线网页" onclick="//www.baidu.com">
+                <div>
+                    <p style="font-size: 15px;">下载离线网页</p>
+                </div>
+                <svg class="svgDownload" id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 543.07 628.22"><path d="M669,187.66v37.65a8.59,8.59,0,0,1-.27,2.09,8.08,8.08,0,0,1-7.88,6.48H507a8.06,8.06,0,0,1-8-7.17,6.23,6.23,0,0,1-.11-1.45V187.61a8,8,0,1,1,16.07,0v30.15H653V187.61a8,8,0,0,1,13.71-5.68,8.45,8.45,0,0,1,2.31,5.73Z" transform="translate(-125.97 -64.08)"/><path d="M630.31,150l-39.48,39.48c-.05.1-.16.16-.21.21a9.23,9.23,0,0,1-5.2,2.62c-.16,0-.32.06-.48.06a6.24,6.24,0,0,1-1,.05l-.91-.05c-.16,0-.32-.06-.48-.06a9,9,0,0,1-5.19-2.62l-.22-.21L537.69,150A9.39,9.39,0,0,1,551,136.67l23.73,23.72V73.46a9.42,9.42,0,0,1,9.37-9.38,9.54,9.54,0,0,1,6.64,2.74,9.21,9.21,0,0,1,2.73,6.64v86.93l23.73-23.72a9.43,9.43,0,0,1,13.29,0,9.59,9.59,0,0,1-.16,13.28Z" transform="translate(-125.97 -64.08)"/><path d="M420,171.17c-12.36-13-21.12-16.86-38.59-16.86H159.87c-24.34,0-33.9,10.09-33.9,35.77V656.53c0,25.68,9.56,35.78,33.91,35.78H517c24.36,0,33.91-10.09,33.91-35.78V333.16c0-18.44-3.63-27.67-16-40.71ZM521.3,651.48c0,6.85-2.55,9.54-9,9.54H164.66c-6.49,0-9-2.7-9-9.54V542.89a7.13,7.13,0,0,1,7.13-7.12H514.17a7.12,7.12,0,0,1,7.12,7.12V651.48ZM220.54,435.12V408a7.12,7.12,0,0,1,7.12-7.12h6.94a7.12,7.12,0,0,1,7.12,7.12v93.36a7.12,7.12,0,0,1-7.12,7.12h-6.94a7.12,7.12,0,0,1-7.12-7.12V470.6a7.13,7.13,0,0,0-7.13-7.12H192.66a7.13,7.13,0,0,0-7.13,7.12v30.77a7.12,7.12,0,0,1-7.12,7.12h-7.08a7.12,7.12,0,0,1-7.12-7.12V408a7.12,7.12,0,0,1,7.12-7.12h7.08a7.13,7.13,0,0,1,7.13,7.12v27.11a7.12,7.12,0,0,0,7.12,7.12h20.75A7.13,7.13,0,0,0,220.54,435.12Zm32.6-20.92V408a7.13,7.13,0,0,1,7.13-7.12h58a7.12,7.12,0,0,1,7.12,7.12v6.19a7.12,7.12,0,0,1-7.12,7.12h-11.4a7.13,7.13,0,0,0-7.13,7.13v72.92a7.12,7.12,0,0,1-7.13,7.12h-7.09a7.12,7.12,0,0,1-7.12-7.12V428.45a7.13,7.13,0,0,0-7.13-7.13h-11A7.13,7.13,0,0,1,253.14,414.2ZM334.41,501l5.21-93.35a7.12,7.12,0,0,1,7.11-6.73h16a7.13,7.13,0,0,1,6.9,5.36l7.83,30.56c2.92,12.45,5.84,25.86,7.94,38.48h.42c2.65-12.45,5.86-26.66,8.92-38.64l8.58-30.55a7.11,7.11,0,0,1,6.86-5.2h15.55a7.12,7.12,0,0,1,7.12,6.78L437.36,501a7.13,7.13,0,0,1-7.12,7.47h-6.42a7.12,7.12,0,0,1-7.12-6.88l-1.16-34.31c-.41-12.93-.82-28.58-.82-44.22h-.43c-2.92,13.73-6.83,29.05-10.45,41.66l-10,36.73a7.14,7.14,0,0,1-6.88,5.26h-5.53a7.13,7.13,0,0,1-6.93-5.46l-8.72-36.21c-3.07-12.61-6.27-27.94-8.51-42H357c-.56,14.53-1,31.13-1.67,44.54l-1.39,34a7.13,7.13,0,0,1-7.12,6.83h-5.29A7.12,7.12,0,0,1,334.41,501Zm178.29-5.78v6.18a7.12,7.12,0,0,1-7.12,7.12H461.14a7.12,7.12,0,0,1-7.13-7.12V408a7.13,7.13,0,0,1,7.13-7.13h7.07a7.13,7.13,0,0,1,7.13,7.13v72.92a7.12,7.12,0,0,0,7.12,7.12h23.12A7.13,7.13,0,0,1,512.7,495.19Zm1.47-121.58H162.74a7.12,7.12,0,0,1-7.12-7.12V195.13c0-6.85,2.54-9.53,9-9.53H390.45c3.24,0,4.52,1.34,4.52,4.76v92.72c0,25.68,9.56,35.77,33.91,35.77h87.89c3.25,0,4.52,1.35,4.52,4.77v42.87A7.12,7.12,0,0,1,514.17,373.61Z" transform="translate(-125.97 -64.08)"/><path d="M355.47,554a7.37,7.37,0,0,0-6.67,4.68L314.48,642a7.37,7.37,0,1,0,13.64,5.59l34.32-83.36h0a7.36,7.36,0,0,0-7-10.27ZM303.6,566.29a7.38,7.38,0,0,0-3.91,1.53l-39.23,29.42a7.37,7.37,0,0,0,0,11.73l39.23,29.42a7.36,7.36,0,1,0,8.89-11.72l-31.41-23.53,31.41-23.59h0a7.35,7.35,0,0,0-5-13.25Zm68.8,0a7.35,7.35,0,0,0-4.06,13.25l31.42,23.6-31.42,23.52h0a7.36,7.36,0,1,0,8.89,11.72L416.46,609a7.37,7.37,0,0,0,0-11.73l-39.23-29.42a7.38,7.38,0,0,0-4.83-1.53Z" transform="translate(-125.97 -64.08)"/></svg>
+            </div>
             <div class="pmain" >
                 <div class="qQuestion">
                     <!--1-->
@@ -87,7 +107,7 @@
                                 你的哔哩哔哩经验值
                         </div>
                         <div>
-                            <input type="number" value="" id="pq1" style="margin-left: 160px;margin-bottom: 10px;height: 25px;width: 200px;font-size: 22px;" oninput="this.value=this.value.replace(/\D/g);var a=document.getElementById('pq1').value;var b=document.getElementById('pLevel');var c=document.getElementById('hide');if(a>0&&a<200){pExpLegal=true;b.innerText='等级:Lv1';c.style.display='block';}else if(a>=200&&a<1500){pExpLegal=true;b.innerText='等级:Lv2';c.style.display='block';}else if(a>=1500&&a<4500){pExpLegal=true;b.innerText='等级:Lv3';c.style.display='block';}else if(a>=4500&&a<10800){pExpLegal=true;b.innerText='等级:Lv4';c.style.display='block';}else if(a>=10800&&a<28700){pExpLegal=true;b.innerText='等级:Lv5';c.style.display='block';}else if(a>=28700&&a<28800){pExpLegal=true;b.innerText='你五天内就可到六级，坚持登录、投币就行啦，无需计算';c.style.display='none';}else if(a==0){pExpLegal=false;b.innerText='';c.style.display='block';}else if(a>28800){pExpLegal=false;b.innerText='已达到六级，无需计算';c.style.display='none';};pExpCalc()">
+                            <input type="number" value="" id="pq1" style="margin-left: 100px;margin-bottom: 5px;height: 16px;width: 60px;font-size: 12px;margin-top: 20px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);var a=document.getElementById('pq1').value;var b=document.getElementById('pLevel');var c=document.getElementById('hide');if(a>0&&a<200){pExpLegal=true;b.innerText='等级:Lv1';c.style.display='block';}else if(a>=200&&a<1500){pExpLegal=true;b.innerText='等级:Lv2';c.style.display='block';}else if(a>=1500&&a<4500){pExpLegal=true;b.innerText='等级:Lv3';c.style.display='block';}else if(a>=4500&&a<10800){pExpLegal=true;b.innerText='等级:Lv4';c.style.display='block';}else if(a>=10800&&a<28700){pExpLegal=true;b.innerText='等级:Lv5';c.style.display='block';}else if(a>=28700&&a<28800){pExpLegal=true;b.innerText='你五天内就可到六级，坚持登录、投币就行啦，无需计算';c.style.display='none';}else if(a==0){pExpLegal=false;b.innerText='';c.style.display='block';}else if(a>=28800){pExpLegal=false;b.innerText='已达到六级，无需计算';c.style.display='none';};pExpCalc()">
                             <span style="margin-left: 40px;font-size: 20px;" id="pLevel"></span>
                         </div>
                     </div>
@@ -100,23 +120,42 @@
                             你愿意花多少钱买硬币&nbsp;&nbsp;&#40;元&#41;
                         </div>
                         <div>
-                            <input type="range" style="margin-left: 160px;margin-bottom: 5px;width: 450px;" value="0" min="0" max="0" id="pExpRange" oninput="var a1=document.getElementById('pExpNumber');a1.value=this.value">
+                            <input type="range" style="margin-left: 160px;margin-bottom: 5px;width: 500px;margin-top: 10px;zoom: 120%;" value="0" min="0" max="0" id="pExpRange" oninput="var a1=document.getElementById('pExpNumber');a1.value=this.value">
                         </div>
                         <div>
-                            <input type="number" style="margin-left: 160px;margin-bottom: 10px;height: 25px;width: 200px;font-size: 22px;" id="pExpNumber" value="0" oninput="this.value=this.value.replace(/\D/g);this.value=pMoney(this.value);var a2=document.getElementById('pExpRange') ;if (this.value==''){a2.value=0}else {a2.value=this.value};">
+                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" id="pExpNumber" value="0" oninput="this.value=this.value.replace(/\D/g);this.value=pMoney(this.value);var a2=document.getElementById('pExpRange') ;if (this.value==''){a2.value=0}else {a2.value=this.value};">
                         </div>
                     </div>
                     <!--3-->
                     <hr>
                     <div class="pBlankDiv"></div>
                     <div>
-                        3
+                        <div class="pQuestionText">
+                            你有投稿吗&#xff1f;
+                        </div>
+                        <div>
+                            <input type="radio" name="pIfUp" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq1').style.display='block';a3=true;">
+                            <span class="question">
+                                有
+                            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="pIfUp" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq1').style.display='none';a3=false;">
+                            <span class="question">
+                                无
+                            </span>
+                        </div>
                     </div>
                     <!--4-->
+                    <div id="hq1">
                     <hr>
                     <div class="pBlankDiv"></div>
                     <div>
-                        4
+                        
+                        <div class="pQuestionText">
+                            估算每个月会有多少人给你投币&#40;填人数&#41;
+                        </div>
+                            <div style="height: 20px;"></div>
+                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;margin-top: 10px;height:13px;font-size: 12px;width: 100px;zoom: 200%;" value="0" id="coin">
+                        </div>
                     </div>
                     <!--5-->
                     <hr>
@@ -140,7 +179,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pfoot">
+            <div class="pFoot">
             </div>
         </div>
         <div id="mobileBody">
@@ -155,9 +194,9 @@
                 document.getElementById("PCBody").style.display="none";
                 console.log("PC bo")
             }
+            document.getElementById('hq1').style.display='none';
         </script>
         <script>
-            var pMoneyi
             function pExpCalc () {
                 pExp=document.getElementById("pq1").value
                 if (pExpLegal==true) {
