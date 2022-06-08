@@ -25,6 +25,7 @@
             var pExpLegal=false
             var pExp
             var pExpRemain
+            var pMoneyMax
         </script>
         <style>
             body {
@@ -99,10 +100,10 @@
                             你愿意花多少钱买硬币&nbsp;&nbsp;&#40;元&#41;
                         </div>
                         <div>
-                            <input type="range" style="margin-left: 160px;margin-bottom: 5px;width: 450px;" value="0" min="0" max="0" >
+                            <input type="range" style="margin-left: 160px;margin-bottom: 5px;width: 450px;" value="0" min="0" max="0" id="pExpRange" oninput="var a1=document.getElementById('pExpNumber');a1.value=this.value">
                         </div>
                         <div>
-                            <input type="number" style="margin-left: 160px;margin-bottom: 10px;height: 25px;width: 200px;font-size: 22px;" oninput="this.value=this.value.replace(/\D/g);this.value=pMoney(this.value)">
+                            <input type="number" style="margin-left: 160px;margin-bottom: 10px;height: 25px;width: 200px;font-size: 22px;" id="pExpNumber" value="0" oninput="this.value=this.value.replace(/\D/g);this.value=pMoney(this.value);var a2=document.getElementById('pExpRange') ;if (this.value==''){a2.value=0}else {a2.value=this.value};">
                         </div>
                     </div>
                     <!--3-->
@@ -156,15 +157,46 @@
             }
         </script>
         <script>
+            var pMoneyi
             function pExpCalc () {
-                pExp=document.getElementById("pq1")
+                pExp=document.getElementById("pq1").value
                 if (pExpLegal==true) {
                     pExpRemain=28800-pExp
+                    pMoneyi=1
+                    var pExpi=0
+                    while (pExpi<=pExpRemain) {
+                        if (pMoneyi<10) {
+                            var pExpi = (pMoneyi*10/7)*10
+                        }
+                        else if (pMoneyi>=10&&pMoneyi<100) {
+                            var pExpi = (pMoneyi*2/3-(Math.pow(-1,pMoneyi+1)+1)/4)*10
+                        }
+                        else if (pMoneyi>=100&&pMoneyi<500) {
+                            var pExpi = (Math.floor(pMoneyi*11/7))*10
+                        }
+                        else if (pMoneyi>=500) {
+                            var pExpi = (Math.floor(pMoneyi*23/14))*10
+                        }
+                        pMoneyi=++pMoneyi
+                        console.log(pMoneyi)
+                    }
+                    document.getElementById("pExpRange").setAttribute("max",pMoneyi)
                 }
+                else if (pExpLegal==false) {
+                    pExpRemain=0
+                }
+
             }
-            
             function pMoney (value) {
-                
+                var a=value
+                if (value>pMoneyi) {
+                    a=pMoneyi
+                }
+                if (value==""){
+                    a="0"
+                }
+                console.log(a)
+                return a
             }
         </script>
         <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
