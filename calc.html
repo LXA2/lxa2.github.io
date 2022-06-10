@@ -92,7 +92,7 @@
                     </span>
                 </div>
             </div>
-            <div style="position: fixed;right: 20px;top: 60%;width: 100px;" title="点击下载离线网页" onclick="//www.baidu.com">
+            <div style="position: fixed;right: 20px;top: 60%;width: 100px;" title="点击下载离线网页" onclick="download()">
                 <div>
                     <p style="font-size: 15px;">下载离线网页</p>
                 </div>
@@ -236,6 +236,11 @@
                 }
                 console.log(a)
                 return a
+            }
+        </script>
+        <script>
+            function download () {
+                window.open("https://lxa2.github.io/resource/a.zip")
             }
         </script>
         <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
