@@ -79,22 +79,12 @@
             .roatate {
                 animation:an 20s infinite;
             }
-            @keyframes an {
-                0% {transform: rotateY(0deg);}
-                45% {transform: rotateY(0deg);}
-                55% {transform: rotateY(360deg);}
-                100% {transform: rotateY(360deg);}
-            }
             .pSubmit {
                 height:50px;
                 width: 300px;
                 margin: auto;
             }
-            @keyframes ttt {
-                0% {transform: rotateY(0deg);}
-                50% {transform: rotateY(90deg);} 
-                100% {transform: rotateY(0deg);}
-            }
+
         </style>
         <style>
             .mheader {text-align: center;
@@ -115,7 +105,7 @@
                     <button onclick="ptr()">1</button>
                 </div>
             </div>
-            <div style="position: fixed;right: 20px;top: 60%;width: 100px;" title="点击下载离线网页" onclick="download()">
+            <div style="position: fixed;right: 20px;top: 60%;width: 100px;" id="pDownloadButton" title="点击下载离线网页" onclick="download()">
                 <div class="roatate">
                 <div>
                     <p style="font-size: 15px;">下载离线网页</p>
@@ -185,14 +175,71 @@
                     <!--5-->
                     <hr>
                     <div class="pBlankDiv"></div>
+                        <div class="pQuestionText">
+                            你有几个小号&#xff1f;
+                        </div>
+                        <div style="height: 20px;"></div>
+                        <div>
+                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;margin-top: 10px;height:13px;font-size: 12px;width: 40px;zoom: 200%;" value="0" id="account">
+                        </div>
                     <div>
-                        5
                     </div>
                     <!--6-->
                     <hr>
                     <div class="pBlankDiv"></div>
                     <div>
-                        6
+                        <div class="pQuestionText">
+                            你有充值过吗&#xff1f;
+                        </div>
+                        <div style="height: 20px;"></div>
+                        <div>
+                            <input type="radio" name="pIfHaveCharged" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq2').style.display='block';a3=true;">
+                            <span class="question">
+                                有
+                            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="pIfHaveCharged" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq2').style.display='none';a3=false;">
+                            <span class="question">
+                                无
+                            </span>
+                            <div id="hq2">
+                                <hr>
+                                <div style="height: 20px;"></div>
+                                <div class="pQuestionText">
+                                    你充值的电池,瓜子还有剩余吗&#xff1f;
+                                </div>
+                                <div style="height: 20px;"></div>
+                                <div>
+                                    <input type="radio" name="pChargeRemain" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq3').style.display='block';a3=true;">
+                                    <span class="question">
+                                        有
+                                    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="pChargeRemain" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq3').style.display='none';a3=false;">
+                                    <span class="question">
+                                        无
+                                    </span>
+                                    <div id="hq3">
+                                        <hr>
+                                        <div style="height: 20px;"></div>
+                                        <div class="pQuestionText">
+                                            电池剩余多少&#xff1f;
+                                        </div>
+                                        <div style="height: 20px;"></div>
+                                        <div>
+                                            <input type="number" id="pBatteryRemain" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);">
+                                        </div>
+                                        <hr>
+                                        <div style="height: 20px;"></div>
+                                        <div class="pQuestionText">
+                                            瓜子剩余多少&#xff1f;
+                                        </div>
+                                        <div style="height: 20px;"></div>
+                                        <div>
+                                            <input type="number" id="pSeedRemain" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--7-->
                     <hr>
@@ -204,29 +251,8 @@
                     </div>
                     <div class="pBlankDiv"></div>
                     <div class="pBlankDiv"></div>
-                    <div class="pSubmit">
-                        <span style="color: #cccc00;">计算</span>
-                        <svg style="width: 60px;margin: auto;" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 752 752" style="enable-background:new 0 0 752 752;" xml:space="preserve">
-                        <style type="text/css">
-                            .st0{fill:#FFFF33;}
-                            .st1{fill:#FFF800;}
-                        </style>
-                        <g id="XMLID_00000157281108435732955330000002787929152838349480_">
-                            <g>
-                                <path class="st0" d="M727.1,213.5v297c0,20.4-16.5,37-37,37H50.6c-14.2,0-25.7-11.5-25.7-25.7V213.5c0-14.2,11.5-25.7,25.7-25.7
-                                    h650.8C715.6,187.8,727.1,199.3,727.1,213.5z M675.7,484.8V250.5c0-6.2-5-11.3-11.3-11.3H87.5c-6.2,0-11.3,5-11.3,11.3v234.4
-                                    c0,6.2,5,11.3,11.3,11.3h576.9C670.7,496.1,675.7,491,675.7,484.8z"/>
-                            </g>
-                            <g>
-                            </g>
-                        </g>
-                        <path class="st1" d="M270.1,406.1c0.2,0.4,0.5,0.8,0.8,1.2c0.1,0.1,0.1,0.1,0.1,0.1c0.2,0.3,0.4,0.5,0.6,0.8
-                            c0.2,0.3,0.4,0.5,0.6,0.8l39.8,46.8c18.7,22,52.9,21.3,70.7-1.4l117.6-149.6c7.5-9.5,5.3-22.9-5-29.8c-3.4-2.3-7.2-3.6-11.2-4
-                            c-7.9-0.8-16,2.3-21,8.6l-38.9,49.5l-22.7,28.9l-8.3,10.6l-23,29.3l-8.6,10.9l-6.7,8.5c-4.2,5.4-12.3,5.5-16.7,0.3l-30.2-35.5
-                            c-7.9-9.2-22.4-10.8-32.3-3.5c-2.8,2-5,4.6-6.4,7.4c-3,5.8-3.1,12.7,0,18.6c0.1,0.2,0.2,0.3,0.2,0.5
-                            C269.8,405.5,270,405.8,270.1,406.1L270.1,406.1z"/>
-                        </svg>
+                    <div class="pSubmit" style="width:150px;height: 65px;margin: auto;">
+                        <button style="width: 100px;height: 40px;zoom: 150%;color: #000000;font-size: 25px;">计算</button>
                     </div>
                 </div>
             </div>
@@ -246,6 +272,8 @@
                 console.log("PC bo")
             }
             document.getElementById('hq1').style.display='none';
+            document.getElementById('hq2').style.display='none';
+            document.getElementById('hq3').style.display='none';
         </script>
         <script>
             function pExpCalc () {
@@ -299,12 +327,20 @@
                 if (aaaaa==1) {
                     d.style.transform="rotateY(180deg)" 
                     aaaaa=0
+                    document.getElementById("pDownloadButton").style="position: fixed;right: 20px;top: 60%;width: 100px;"
                 }
                 else {
                     d.style.transform="rotateY(0deg)"
                     aaaaa=1
+                    document.getElementById("pDownloadButton").style="position: fixed;right: 20px;top: 60%;width: 100px;"
                 }
             }
+            var dingtalk="shabi"
+            var dingtalkshabimadequanshibug=1
+            while (dingtalkshabimadequanshibug<=100) {
+                console.log("dingtalkshabimadequanshibug")
+                dingtalkshabimadequanshibug++
+            } 
         </script>
         <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
         <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
