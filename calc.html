@@ -448,6 +448,24 @@
         </script>
         <script>
             function pCalcStart(aa) {
+                var pCoinRemain,pCoinRemain2,pExpRemain
+                if (c2<10) {
+                    pCoinRemain = c2*10/7
+                }
+                else if (c2>=10&&c2<100) {
+                    pCoinRemain = c2*2/3-(Math.pow(-1,c2+1)+1)/4
+                }
+                else if (c2>=100&&c2<500) {
+                    pCoinRemain = Math.floor(c2*11/7)
+                }
+                else if (c2>=500) {
+                    pCoinRemain = Math.floor(c2*23/14)
+                }
+                if (c6==true&&c7==true&&c8==true) {
+                    pCoinRemain=pCoinRemain
+                }
+                pCoinRemain2=pCoinRemain
+                PExpRemain=28800-c1
                 
             }
         </script>
