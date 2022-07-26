@@ -18,17 +18,34 @@
             height: 60px;
             align-content: center;
             color: black;
-            font-size: 30px;
+            font-size:5rem;
             font-weight:bold;
-            position: fixed;
-            margin-top: 290px;
+            position: absolute;
+            margin-top: 53%;
+        }
+        .time {
+            position: absolute;
+            width:auto;
+            height: 20%;
+            margin-top: 75%;
+            margin-left: 33%;
         }
         .tText1 {
-            position: fixed;
+            /* position: absolute; */
+            font-size: 3rem;
+            margin: auto;
+            text-align: center;
+        }
+        .tText2 {
+            /* position: absolute; */
+            font-size: 4rem;
+            font-weight: 500;
+            margin: auto;
+            text-align: center;
         }
     </style>
     <body>
-        <img src=".//resource/ssm.png" style="margin: auto;width: 100%;position: fixed;">
+        
         <div class="name">
                 啊啊啊
         </div>
@@ -36,11 +53,11 @@
             <span class="tText1" id="tText1">
                 
             </span>
-            <span class="tText2">
+            <span class="tText2" id="tText2">
 
             </span>
         </div>
-        
+        <img src=".//resource/ssm.png" style="margin: auto;width: 100%;">
     </body>
 
     <script>
@@ -55,10 +72,11 @@
             var a=year+"-"+month+"-"+day+" "+hour+":"+minute+":";
             console.log(a);
             document.getElementById("tText1").innerText=a;
+            document.getElementById("tText2").innerText=second;
         }
 
     </script>
     <script>
-        setInterval(rDate(), 1000);
+        window.setInterval(function(){rDate()}, 1000);
     </script>
 </html>
