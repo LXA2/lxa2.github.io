@@ -7,11 +7,58 @@
     <style>
         body {
                 margin: 0%;
-                background-image:url('.//resource/ssm.png');
-                background-repeat:no-repeat;
-            } 
+                /* background-image:url('.//resource/ssm.png');
+                background-repeat:no-repeat; */
+        }
+        .name {
+            margin: auto;
+            position: fixed;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            align-content: center;
+            color: black;
+            font-size: 30px;
+            font-weight:bold;
+            position: fixed;
+            margin-top: 290px;
+        }
+        .tText1 {
+            position: fixed;
+        }
     </style>
     <body>
+        <img src=".//resource/ssm.png" style="margin: auto;width: 100%;position: fixed;">
+        <div class="name">
+                啊啊啊
+        </div>
+        <div class="time">
+            <span class="tText1" id="tText1">
+                
+            </span>
+            <span class="tText2">
 
+            </span>
+        </div>
+        
     </body>
+
+    <script>
+        function rDate(){
+            var date = new Date();
+            var year = date.getFullYear();    //  返回的是年份
+            var month = date.getMonth() + 1;  //  返回的月份上个月的月份，记得+1才是当月
+            var day = date.getDate();       //  返回的是几号
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            var a=year+"-"+month+"-"+day+" "+hour+":"+minute+":";
+            console.log(a);
+            document.getElementById("tText1").innerText=a;
+        }
+
+    </script>
+    <script>
+        setInterval(rDate(), 1000);
+    </script>
 </html>
