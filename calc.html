@@ -27,11 +27,17 @@
             var pExpRemain
             var pMoneyMax
             var pMoneyi=0
+            var a3=0;a4=0;a5=0;a6=0;a7=0;a8=0;
+
+
         </script>
         <style>
             body {
                 margin: 0%;
             } 
+            a{
+                text-decoration:none
+            }
             #PCBody {
                 transition: all 2s;
             }
@@ -79,12 +85,25 @@
             .roatate {
                 animation:an 20s infinite;
             }
+            @keyframes an {
+                0% {transform: rotateY(0deg);}
+                45% {transform: rotateY(0deg);}
+                55% {transform: rotateY(360deg);}
+                100% {transform: rotateY(360deg);}
+            }
             .pSubmit {
                 height:50px;
                 width: 300px;
                 margin: auto;
             }
-
+            .pFoot {
+                margin: auto;
+                width: 80%;
+                align-content: center;
+                text-align: center;
+                color: #000000;
+                margin-top: 30px;
+            }
         </style>
         <style>
             .mheader {text-align: center;
@@ -122,7 +141,7 @@
                                 你的哔哩哔哩经验值
                         </div>
                         <div>
-                            <input type="number" value="" id="pq1" style="margin-left: 100px;margin-bottom: 5px;height: 16px;width: 60px;font-size: 12px;margin-top: 20px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);var a=document.getElementById('pq1').value;var b=document.getElementById('pLevel');var c=document.getElementById('hide');if(a>0&&a<200){pExpLegal=true;b.innerText='等级:Lv1';c.style.display='block';}else if(a>=200&&a<1500){pExpLegal=true;b.innerText='等级:Lv2';c.style.display='block';}else if(a>=1500&&a<4500){pExpLegal=true;b.innerText='等级:Lv3';c.style.display='block';}else if(a>=4500&&a<10800){pExpLegal=true;b.innerText='等级:Lv4';c.style.display='block';}else if(a>=10800&&a<28700){pExpLegal=true;b.innerText='等级:Lv5';c.style.display='block';}else if(a>=28700&&a<28800){pExpLegal=true;b.innerText='你五天内就可到六级，坚持登录、投币就行啦，无需计算';c.style.display='none';}else if(a==0){pExpLegal=false;b.innerText='';c.style.display='block';}else if(a>=28800){pExpLegal=false;b.innerText='已达到六级，无需计算';c.style.display='none';};pExpCalc()">
+                            <input type="number" value="" id="pq1" style="margin-left: 100px;margin-bottom: 5px;height: 16px;width: 60px;font-size: 12px;margin-top: 20px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);var a=document.getElementById('pq1').value;var b=document.getElementById('pLevel');var c=document.getElementById('hide');if(a>0&&a<200){pExpLegal=true;b.innerText='等级:Lv1';c.style.display='block';}else if(a>=200&&a<1500){pExpLegal=true;b.innerText='等级:Lv2';c.style.display='block';}else if(a>=1500&&a<4500){pExpLegal=true;b.innerText='等级:Lv3';c.style.display='block';}else if(a>=4500&&a<10800){pExpLegal=true;b.innerText='等级:Lv4';c.style.display='block';}else if(a>=10800&&a<28700){pExpLegal=true;b.innerText='等级:Lv5';c.style.display='block';}else if(a>=28700&&a<28800){pExpLegal=true;b.innerText='你五天内就可到六级，坚持登录、投币就行啦，无需计算';c.style.display='none';}else if(a==0){pExpLegal=false;b.innerText='';c.style.display='block';}else if(a>=28800){pExpLegal=false;b.innerText='已达到六级，无需计算';c.style.display='none';};pExpCalc();">
                             <span style="margin-left: 40px;font-size: 20px;" id="pLevel"></span>
                         </div>
                     </div>
@@ -169,7 +188,7 @@
                             估算每个月会有多少人给你投币&#40;填人数&#41;
                         </div>
                             <div style="height: 20px;"></div>
-                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;margin-top: 10px;height:13px;font-size: 12px;width: 100px;zoom: 200%;" value="0" id="coin">
+                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;margin-top: 10px;height:13px;font-size: 12px;width: 100px;zoom: 200%;" value="0" id="pCoin">
                         </div>
                     </div>
                     <!--5-->
@@ -180,7 +199,7 @@
                         </div>
                         <div style="height: 20px;"></div>
                         <div>
-                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;margin-top: 10px;height:13px;font-size: 12px;width: 40px;zoom: 200%;" value="0" id="account">
+                            <input type="number" style="margin-left: 100px;margin-bottom: 5px;margin-top: 10px;height:13px;font-size: 12px;width: 40px;zoom: 200%;" value="0" id="pAccount">
                         </div>
                     <div>
                     </div>
@@ -193,11 +212,11 @@
                         </div>
                         <div style="height: 20px;"></div>
                         <div>
-                            <input type="radio" name="pIfHaveCharged" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq2').style.display='block';a3=true;">
+                            <input type="radio" name="pIfHaveCharged" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq2').style.display='block';a4=true;">
                             <span class="question">
                                 有
                             </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="pIfHaveCharged" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq2').style.display='none';a3=false;">
+                            <input type="radio" name="pIfHaveCharged" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq2').style.display='none';a4=false;">
                             <span class="question">
                                 无
                             </span>
@@ -209,11 +228,11 @@
                                 </div>
                                 <div style="height: 20px;"></div>
                                 <div>
-                                    <input type="radio" name="pChargeRemain" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq3').style.display='block';a3=true;">
+                                    <input type="radio" name="pChargeRemain" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq3').style.display='block';a5=true;">
                                     <span class="question">
                                         有
                                     </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="pChargeRemain" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq3').style.display='none';a3=false;">
+                                    <input type="radio" name="pChargeRemain" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq3').style.display='none';a5=false;">
                                     <span class="question">
                                         无
                                     </span>
@@ -221,21 +240,40 @@
                                         <hr>
                                         <div style="height: 20px;"></div>
                                         <div class="pQuestionText">
-                                            电池剩余多少&#xff1f;
+                                            剩余的电池,瓜子你愿意花掉&#40;转为经验值&#41;吗&#xff1f;
                                         </div>
                                         <div style="height: 20px;"></div>
                                         <div>
-                                            <input type="number" id="pBatteryRemain" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);">
+                                            <input type="radio" name="pIfSpendRemain" style="margin-left: 100px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq4').style.display='block';a6=true;">
+                                            <span class="question">
+                                                愿意
+                                            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" name="pIfSpendRemain" style="margin-left: 60px;margin-bottom: 10px;zoom: 200%;margin-top: 20px;" onclick="document.getElementById('hq4').style.display='none';a6=false;">
+                                            <span class="question">
+                                                不愿意
+                                            </span>
                                         </div>
-                                        <hr>
-                                        <div style="height: 20px;"></div>
-                                        <div class="pQuestionText">
-                                            瓜子剩余多少&#xff1f;
-                                        </div>
-                                        <div style="height: 20px;"></div>
-                                        <div>
-                                            <input type="number" id="pSeedRemain" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);">
-                                        </div>
+                                        <div id="hq4">
+                                            <hr>
+                                            <div style="height: 20px;"></div>
+                                            <div class="pQuestionText">
+                                                电池剩余多少&#xff1f;
+                                            </div>
+                                            <div style="height: 20px;"></div>
+                                            <div>
+                                                <input type="number" id="pBatteryRemain" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);">
+                                            </div>
+                                            <hr>
+                                            <div style="height: 20px;"></div>
+                                            <div class="pQuestionText">
+                                                瓜子剩余多少&#xff1f;
+                                            </div>
+                                            <div style="height: 20px;"></div>
+                                            <div>
+                                                <input type="number" id="pSeedRemain" style="margin-left: 100px;margin-bottom: 5px;height: 13px;width: 100px;font-size: 12px;zoom: 200%;" oninput="this.value=this.value.replace(/\D/g);">
+                                            </div>
+                                            </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -245,18 +283,27 @@
                     <hr>
                     <div class="pBlankDiv"></div>
                     <div>
-                        7
+                        
                     </div>
                     <hr>
                     </div>
                     <div class="pBlankDiv"></div>
                     <div class="pBlankDiv"></div>
                     <div class="pSubmit" style="width:150px;height: 65px;margin: auto;">
-                        <button style="width: 100px;height: 40px;zoom: 150%;color: #000000;font-size: 25px;">计算</button>
+                        <button style="width: 100px;height: 40px;zoom: 150%;color: #000000;font-size: 25px;" onclick="pCalc()">计算</button>
                     </div>
                 </div>
             </div>
             <div class="pFoot">
+                |&nbsp;&nbsp;&nbsp;
+                <a href="https://space.bilibili.com/591357735" target="_blank" title="前往UP的主页" style="color:#000000 ;">
+                    前往哔哩哔哩个人空间
+                </a>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <a href="https://www.bilibili.com/video/BV1U34y1t7Xm" target="_blank" title="前往观看视频" style="color:#000000 ;">
+                    前往观看视频
+                </a>
+                &nbsp;&nbsp;&nbsp;|
             </div>
         </div>
         <div id="mobileBody">
@@ -274,6 +321,7 @@
             document.getElementById('hq1').style.display='none';
             document.getElementById('hq2').style.display='none';
             document.getElementById('hq3').style.display='none';
+            document.getElementById('hq4').style.display='none';
         </script>
         <script>
             function pExpCalc () {
@@ -296,7 +344,6 @@
                             var pExpi = (Math.floor(pMoneyi*23/14))*10
                         }
                         pMoneyi=++pMoneyi
-                        console.log(pMoneyi)
                     }
                     document.getElementById("pExpRange").setAttribute("max",pMoneyi)
                 }
@@ -342,6 +389,69 @@
                 dingtalkshabimadequanshibug++
             } 
         </script>
+        <!--计算-->
+        <script>
+            var c1=0,c2=0,c3=false,c4=0,c5=0,c6=false,c7=false,c8=false,c9=0,c10=0;
+            function pCalc (){
+                c1=document.getElementById("pq1").value//---------------经验值
+                c2=document.getElementById("pExpNumber").value//--------愿意花多少钱买硬币
+                c3=a3//-------------------------------------------------是否有投稿|Boolean
+                c4=document.getElementById("pCoin").value//-------------每月多少人投币
+                c5=document.getElementById("pAccount").value//----------小号数量
+                c6=a4//-------------------------------------------------是否充值过|Boolean
+                c7=a5//-------------------------------------------------充值的电池,瓜子还有剩余|Boolean
+                c8=a6//-------------------------------------------------剩余的电池,瓜子愿意花掉|Boolean
+                c9=document.getElementById("pBatteryRemain").value//----剩余电池
+                c10=document.getElementById("pSeedRemain").value//------剩余瓜子
+
+                if (pExpLegal==true) {
+                    if (c3==0) {
+                        alert ("请完成问题（你有投稿吗？）")
+                    }
+                    else {
+                        if (c6==0) {
+                            alert ("请完成问题（你有充值过吗？）")
+                        }
+                        else if (c6==true) {
+                            if (c7==0) {
+                                alert ("请完成问题（你充值的电池,瓜子还有剩余吗？）")
+                            }
+                            else if (c7==true) {
+                                if (c8==0) {
+                                    alert ("请完成问题（剩余的电池,瓜子你愿意花掉（转为经验值）吗？）")
+                                }
+                                else if (c8==true) {
+                                    if (c9<=0&&c10<=0) {
+                                        alert ("请正确回答问题（电池剩余多少？）、（瓜子剩余多少）")
+                                    }
+                                    else {
+                                        pCalcStart(0)
+                                    }
+                                }
+                                else if (c8==false) {
+                                    pCalcStart(1)
+                                }
+                            }
+                            else if (c7==false) {
+                                pCalcStart(2)
+                            }
+                        }
+                        else if (c6==false) {
+                            pCalcStart(3)
+                        }
+                    }
+                }
+                else {
+                    alert ("请输入经验值\n或\n输入了错误的经验值")
+                }
+            }
+        </script>
+        <script>
+            function pCalcStart(aa) {
+                
+            }
+        </script>
+        <!--/计算-->
         <button onclick="document.getElementById('PCBody').style.display='block';">p1</button>
         <button onclick="document.getElementById('PCBody').style.display='none';">p2</button>
         <button onclick="document.getElementById('mobileBody').style.display='block';">m1</button>
