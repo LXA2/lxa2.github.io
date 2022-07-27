@@ -109,7 +109,7 @@
         function rDate2(){
             coo=document.cookie
             console.log(coo)
-            if (coo=="logon=true")
+            if (new RegExp("logon=true").test(coo))
             {
                 document.getElementById("p").style.display="none";
                 document.getElementById("hidden1").style.display="block";
@@ -127,6 +127,9 @@
                         document.getElementById("hidden1").style.display="block";
                     }
                 }
+            }
+            else if (coo!=""&&coo!=="logon=true") {
+
             }
             else 
             {
