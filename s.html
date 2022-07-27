@@ -14,7 +14,7 @@
             placeholderPic();
         }
         var b,c,d,e
-        var username
+        var username,coo
     </script>
     <style>
         body {
@@ -106,6 +106,7 @@
         }
         function rDate2(){
             coo=document.cookie
+            console.log(coo)
             if (coo!="")
             {
                 document.getElementById("p").style.display="none";
@@ -159,7 +160,7 @@
             console.log(b)
             if (inp==b||inp==d||inp==c||inp==e) {
                 document.getElementById("p").style.display="none";
-                document.cookie="1";
+                document.cookie="logon=true;expires=Thu, 18 Dec 9999 12:00:00 GMT";
                 username=prompt("请输入姓名:","");
                 if (username!="" && username!=null)
                 {
