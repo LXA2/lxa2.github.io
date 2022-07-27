@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>zwdt.sh.gov.cn</title>
+        <meta charset="utf-8">
+    </head>
+    <script>
+        function placeholderPic(){
+            var w = document.documentElement.offsetWidth;
+            document.documentElement.style.fontSize=w/80+'px';
+        }
+        placeholderPic();
+        window.onresize=function(){
+            placeholderPic();
+        }
+        var b,c,d,e
+        var username
+    </script>
+    <style>
+        body {
+                margin: 0%;
+        }
+        .name {
+            margin: auto;
+            position: fixed;
+            text-align: center;
+            width: 100%;
+            height: 60px;
+            align-content: center;
+            color: black;
+            font-size:5rem;
+            font-weight:bold;
+            position: absolute;
+            margin-top: 53%;
+        }
+        .time {
+            position: absolute;
+            width:100%;
+            height: auto;
+            margin-top: 75%;
+        }
+        .aaa {
+            position: absolute;
+            width: 100%;
+            margin: auto;
+            align-self: auto;
+            text-align: center;
+        }
+        .tText1 {
+            font-size: 3rem;
+        }
+        .tText2 {
+            font-size: 4rem;
+            font-weight: 500;
+        }
+        .pasBox {
+            width:100%;
+            height: 30%;
+            margin: auto;
+            font-size: 15rem;
+        }
+    </style>
+    <body>
+        <div id="hidden1">
+            <div class="name" id="name">
+                啊啊啊
+            </div>
+            <div class="time">
+                <span class="aaa">
+                    <span class="tText1" id="tText1">
+                        
+                    </span>
+                    <span class="tText2" id="tText2">
+
+                    </span>
+                </span>
+            </div>
+            <img src=".//img/ssm.png" style="margin: auto;width: 100%;">
+        </div>
+        <div class="p" id="p">
+            <input type="password" value="" class="pasBox" id="pass" oninput="pasC()">
+        </div>
+    </body>
+    <script>
+        document.getElementById("hidden1").style.display="none";
+    </script>
+    <script>
+        rDate2()
+        function rDate(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            if (second<10) {
+                second="0"+second
+            }
+            if (month<10) {
+                month="0"+month
+            }
+            var a=year+"-"+month+"-"+day+" "+hour+":"+minute+":";
+            document.getElementById("tText1").innerText=a;
+            document.getElementById("tText2").innerText=second;
+        }
+        function rDate2(){
+            coo=document.cookie
+            if (coo!="")
+            {
+                document.getElementById("p").style.display="none";
+                document.getElementById("hidden1").style.display="block";
+                alert("Welcome again ");
+                username=prompt("请输入姓名:","");
+                if (username!="" && username!=null)
+                {
+                    document.getElementById("name").innerText=username;
+                    document.getElementById("hidden1").style.display="block";
+                }
+                else {
+                    username=prompt("请输入姓名:","");
+                    if (username!="" && username!=null)
+                    {
+                        document.getElementById("name").innerText=username;
+                        document.getElementById("hidden1").style.display="block";
+                    }
+                }
+            }
+            else 
+            {
+                document.getElementById("hidden1").style.display="none";
+                // if (username!="" && username!=null)
+                // {
+                // setCookie("username",username);
+                // }
+            }
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            if (second<10) {
+                second="0"+second
+            }
+            if (month<10) {
+                month="0"+month
+            }
+            var a=year+"-"+month+"-"+day+" "+hour+":"+minute+":";
+            b=Math.abs(minute-day)+1
+            d=c-2
+            c="cydszgzgnmtl"
+            e=b-59
+        }
+        function pasC(){
+            var inp=document.getElementById("pass").value
+            console.log(inp)
+            console.log(b)
+            if (inp==b||inp==d||inp==c||inp==e) {
+                document.getElementById("p").style.display="none";
+                document.cookie="1";
+                username=prompt("请输入姓名:","");
+                if (username!="" && username!=null)
+                {
+                    document.getElementById("name").innerText=username;
+                    document.getElementById("hidden1").style.display="block";
+                }
+                else {
+                    username=prompt("请输入姓名:","");
+                    if (username!="" && username!=null)
+                    {
+                        document.getElementById("name").innerText=username;
+                        document.getElementById("hidden1").style.display="block";
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        window.setInterval(function(){rDate()}, 1000);
+    </script>
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> 556ad2b37dddc81d85f85b890735e99df30c7747
