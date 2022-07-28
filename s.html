@@ -220,7 +220,7 @@
         }
         function rDate2(){
             coo=document.cookie
-            console.log(coo)
+            // console.log(coo)
             if (new RegExp("logon=true").test(coo))
             {
                 document.getElementById("p").style.display="none";
@@ -268,8 +268,8 @@
         }
         function pasC(){
             var inp=document.getElementById("pass").value
-            console.log(inp)
-            console.log(b)
+            // console.log(inp)
+            console.log(b-inp)
             if (inp==b||inp==d||inp==e) {//inp==c||
                 document.getElementById("p").style.display="none";
                 document.cookie="logon=true;expires=Thu, 31 Dec 9999 12:00:00 GMT";
