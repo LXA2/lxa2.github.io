@@ -79,6 +79,13 @@
         username=prompt("请输入姓名:","XXX");
                 if (username!="" && username!=null)
                 {
+                    var len=username.length-1;
+                        var xxname="";
+                        while (len>0) {
+                            xxname=xxname+"*";
+                            len=len-1;
+                        };
+                        xxname=xxname+username.charAt(username.length-1);
                     document.getElementById("name").innerText=username;
                     document.getElementById("hidden1").style.display="block";
                 }
@@ -86,6 +93,13 @@
                     username=prompt("请输入姓名:","XXX");
                     if (username!="" && username!=null)
                     {
+                        var len=username.length-1;
+                        var xxname="";
+                        while (len>0) {
+                            xxname=xxname+"*";
+                            len=len-1;
+                        };
+                        xxname=xxname+username.charAt(username.length-1);
                         document.getElementById("name").innerText=username;
                         document.getElementById("hidden1").style.display="block";
                     }
