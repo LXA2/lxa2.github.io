@@ -234,7 +234,17 @@
                 username=prompt("请输入姓名:","XXX");
                 if (username!="" && username!=null)
                 {
-                    document.getElementById("name").innerText=username;
+                    //................................
+                    var len=username.length-1;
+                    var xxname="";
+                    while (len>0) {
+                        xxname=xxname+"*";
+                        len=len-1;
+                    };
+                    xxname=xxname+username.charAt(username.length-1);
+                    
+                    //................................
+                    document.getElementById("name").innerText=xxname;
                     document.getElementById("bgp").setAttribute("src",".//img/ssm.png")
                     document.getElementById("hidden1").style.display="block";
                 }
@@ -242,7 +252,14 @@
                     username=prompt("请输入姓名:","XXX");
                     if (username!="" && username!=null)
                     {
-                        document.getElementById("name").innerText=username;
+                        var len=username.length-1;
+                        var xxname="";
+                        while (len>0) {
+                            xxname=xxname+"*";
+                            len=len-1;
+                        };
+                        xxname=xxname+username.charAt(username.length-1);
+                        document.getElementById("name").innerText=xxname;
                         document.getElementById("bgp").setAttribute("src",".//img/ssm.png")
                         document.getElementById("hidden1").style.display="block";
                     }
@@ -284,7 +301,15 @@
                 username=prompt("请输入姓名:","XXX");
                 if (username!="" && username!=null)
                 {
-                    document.getElementById("name").innerText=username;
+                    var len=username.length-1;
+                    var xxname="";
+                    while (len>0) {
+                        xxname=xxname+"*";
+                        len=len-1;
+                    };
+                    xxname=xxname+username.charAt(username.length-1);
+                    console.log("111");
+                    document.getElementById("name").innerText=xxname;
                     document.getElementById("bgp").setAttribute("src",".//img/ssm.png")
                     document.getElementById("hidden1").style.display="block";
                 }
@@ -292,7 +317,14 @@
                     username=prompt("请输入姓名:","XXX");
                     if (username!="" && username!=null)
                     {
-                        document.getElementById("name").innerText=username;
+                        var len=username.length-1;
+                        var xxname="";
+                        while (len>0) {
+                            xxname=xxname+"*";
+                            len=len-1;
+                        };
+                        xxname=xxname+username.charAt(username.length-1);
+                        document.getElementById("name").innerText=xxname;
                         document.getElementById("bgp").setAttribute("src",".//img/ssm.png")
                         document.getElementById("hidden1").style.display="block";
                     }
