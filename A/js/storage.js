@@ -1,0 +1,113 @@
+var s1=document.getElementById("k1");
+var s2=document.getElementById("k2");
+var s3=document.getElementById("k3");
+var s4=document.getElementById("k4");
+var s5=document.getElementById("k5");
+var s6=document.getElementById("k6");
+var s7=document.getElementById("k7");
+var s8=document.getElementById("k8");
+var s9=document.getElementById("k9");
+var s10=document.getElementById("k10");
+var s11=document.getElementById("k11");
+var s12=document.getElementById("k12");
+var s13=document.getElementById("k13");
+var s14=document.getElementById("k14");
+var s15=document.getElementById("k15");
+var s16=document.getElementById("k16");
+var s17=document.getElementById("k17");
+var s18=document.getElementById("k18");
+var s19=document.getElementById("k19");
+var s20=document.getElementById("k20");
+if (typeof(Storage)!=="undefined")
+{
+	console.log("Storage Available");
+	localStorage.setItem("s","y");
+	if (localStorage.getItem("s")=="y") {
+		console.log("store");
+		document.getElementById("k1").value=localStorage.getItem("k1");
+		document.getElementById("k2").value=localStorage.getItem("k2");
+		document.getElementById("k3").value=localStorage.getItem("k3");
+		document.getElementById("k4").value=localStorage.getItem("k4");
+		document.getElementById("k5").value=localStorage.getItem("k5");
+		document.getElementById("k6").value=localStorage.getItem("k6");
+		document.getElementById("k7").value=localStorage.getItem("k7");
+		document.getElementById("k8").value=localStorage.getItem("k8");
+		document.getElementById("k9").value=localStorage.getItem("k9");
+		document.getElementById("k10").value=localStorage.getItem("k10");
+		document.getElementById("k11").value=localStorage.getItem("k11");
+		document.getElementById("k12").value=localStorage.getItem("k12");
+		document.getElementById("k13").value=localStorage.getItem("k13");
+		document.getElementById("k14").value=localStorage.getItem("k14");
+		document.getElementById("k15").value=localStorage.getItem("k15");
+		document.getElementById("k16").value=localStorage.getItem("k16");
+		document.getElementById("k17").value=localStorage.getItem("k17");
+		document.getElementById("k18").value=localStorage.getItem("k18");
+		document.getElementById("k19").value=localStorage.getItem("k19");
+		document.getElementById("k20").value=localStorage.getItem("k20");
+		keyW1=localStorage.getItem("k1");
+		keyW2=localStorage.getItem("k3");
+		keyW3=localStorage.getItem("k3");
+		keyW4=localStorage.getItem("k4");
+		keyW5=localStorage.getItem("k5");
+		keyW6=localStorage.getItem("k6");
+		keyW7=localStorage.getItem("k7");
+		keyW8=localStorage.getItem("k8");
+		keyW9=localStorage.getItem("k9");
+		keyW1=localStorage.getItem("k10");
+		keyW1=localStorage.getItem("k11");
+		keyW1=localStorage.getItem("k12");
+		keyW1=localStorage.getItem("k13");
+		keyW1=localStorage.getItem("k14");
+		keyW1=localStorage.getItem("k15");
+		keyW1=localStorage.getItem("k16");
+		keyW1=localStorage.getItem("k17");
+		keyW1=localStorage.getItem("k18");
+		keyW1=localStorage.getItem("k19");
+		keyW2=localStorage.getItem("k20");
+		
+	}
+}
+function store(a,b){
+	switch (a){
+		case "1":localStorage.setItem("k1",b);
+			break;
+		case "2":localStorage.setItem("k2",b);
+			break;
+		case "3":localStorage.setItem("k3",b);
+			break;
+		case "4":localStorage.setItem("k4",b);
+			break;
+		case "5":localStorage.setItem("k5",b);
+			break;
+		case "6":localStorage.setItem("k6",b);
+			break;
+		case "7":localStorage.setItem("k7",b);
+			break;
+		case "8":localStorage.setItem("k8",b);
+			break;
+		case "9":localStorage.setItem("k9",b);
+			break;
+		case "10":localStorage.setItem("k10",b);
+			break;
+		case "11":localStorage.setItem("k11",b);
+			break;
+		case "12":localStorage.setItem("k12",b);
+			break;
+		case "13":localStorage.setItem("k13",b);
+			break;
+		case "14":localStorage.setItem("k14",b);
+			break;
+		case "15":localStorage.setItem("k15",b);
+			break;
+		case "16":localStorage.setItem("k16",b);
+			break;
+		case "17":localStorage.setItem("k17",b);
+			break;
+		case "18":localStorage.setItem("k18",b);
+			break;
+		case "19":localStorage.setItem("k19",b);
+			break;
+		case "20":localStorage.setItem("k20",b);
+			break;
+	}
+}
