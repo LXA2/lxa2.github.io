@@ -47,7 +47,6 @@ var i1f = 0,
 	i18f = 0,
 	i19f = 0,
 	i20f = 0;
-
 function inp(a) {
 	var q = document.getElementById("body");
 	var w = document.getElementById("c2");
@@ -219,6 +218,9 @@ function inp(a) {
 			console.log("keyW20" + "[" + keyW20 + "]");
 		}
 		i20++;
+	}
+	if (i1==i1f&&i2==i2f&&i3==i3f&&i4==i4f&&i5==i5f&&i6==i6f&&i7==i7f&&i8==i8f&&i9==i9f&&i10==i10f&&i11==i11f&&i12==i12f&&i13==i13f&&i14==i14f&&i15==i15f&&i16==i16f&&i17==i17f&&i18==i18f&&i19==i19f&&i20==i20f) {
+		x=0;
 	}
 	if(x >= 20) {
 		alA();
