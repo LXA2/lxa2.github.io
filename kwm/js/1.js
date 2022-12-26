@@ -305,7 +305,6 @@ function inp(a) {
 	i19f = i19;
 	i20f = i20;
 }
-
 function alA() {
 	var q = document.getElementById("body");
 	var w = document.getElementById("c2");
