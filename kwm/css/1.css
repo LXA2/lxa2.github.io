@@ -1,9 +1,26 @@
 body{
 	padding: 0%;
+	margin: 0%;
 	background-color: black;
 }
+.top{
+	width: 100%;
+	position: fixed;
+	background-color: #CCCCCC;
+	height: 3.5em;
+	margin-top: 0%;
+}
+.settingsICON{
+	width: 2.7em;
+	height: 2.7em;
+	margin: auto;
+	margin-top: 0.4em;
+	margin-left: 0.8em;
+}
+.blank{
+	height: 3.2em;
+}
 .tArea{
-	/*margin-top: 20%;*/
 	width: 95%;
 	margin: auto;
 }
@@ -32,4 +49,7 @@ p > input{
 .mostImpKW{
 	background-color: #FF5555;
 	color: white;
+}
+.inform{
+	back
 }
