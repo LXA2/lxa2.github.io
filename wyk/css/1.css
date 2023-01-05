@@ -1,0 +1,13 @@
+.title{
+	margin-top: 1%;
+	margin: auto;
+	text-align: center;
+	animation: a 5s;
+	width: 80%;
+	height: 100em;
+	font-size: 20em;
+}
+@keyframes a{
+	from {font-size: 500em;}
+	to {font-size: 20em;}
+}
