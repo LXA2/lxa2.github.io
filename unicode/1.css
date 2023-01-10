@@ -1,0 +1,15 @@
+body{
+	margin: 0%;
+}
+.a{
+	margin: auto;
+	width: 80%;
+	min-width: 950px;
+	background-color: #0000001a;
+	min-height: 200px;
+	margin-top: 3%;
+	font-size: 3em;
+}
+.b{
+	margin-left: 25%;
+}
