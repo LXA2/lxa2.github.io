@@ -13,3 +13,21 @@ body{
 .b{
 	margin-left: 25%;
 }
+.aa{
+	margin-left: 10%;
+	margin-top: 5%;
+}
+.result{
+	margin-left: 5%;
+	background-color: azure;
+	max-width: 50%;
+	height: 20em;
+	border: 2px;
+	border-radius: 0.3em;
+	cursor: text;
+}
+.ua{
+	font-size: 1em;
+	height: 10em;
+	width: 40%;
+}
