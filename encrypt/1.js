@@ -40,6 +40,101 @@ function toUnicode(theString) {
   }
   return unicodeString;
 }
+function randomNum(min,max){ 
+    // switch(arguments.length){ 
+    //     case 1: 
+    //         return parseInt(Math.random()*minNum+1,10); 
+    //     	break; 
+    //     case 2: 
+    //         return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+    //     	break; 
+    //     default: 
+    //     return 0; 
+    //     	break; 
+    // } 
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+} 
+var p,q,n,n2,e,d;
+function generatePrivateKey(){
+	var i=randomNum(1000,9999);
+	while ((i/2)%1===0||(i/3)===0||(i/5)===0||(i/7)===0){i=randomNum(1000,9999);}
+	p=i;
+	var i=randomNum(1000,9999);
+	while ((i/2)%1===0||i==p||(i/3)===0||(i/5)===0||(i/7)===0){i=randomNum(1000,9999);}
+	q=i;
+	n=p*q;
+	n2=(p-1)*(q-1);
+
+
+	console.log(`p:"${p}",q:"${q}",n:${n},φn:${n2},e:${e},d:${d};`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var a2=0;
 function generatePrivateKey_nonono(){
 	var ua=navigator.userAgent;
@@ -72,3 +167,4 @@ function generatePrivateKey_nonono(){
 	console.log(a1);
 	document.getElementById("pcPubKeyCopy").value=a1;
 }
+
