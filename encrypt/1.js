@@ -41,7 +41,7 @@ function toUnicode(theString) {
   return unicodeString;
 }
 var a2=0;
-function generatePrivateKey(){
+function generatePrivateKey_nonono(){
 	var ua=navigator.userAgent;
 	var a1=toUnicode(ua);
 	// if (a1.length>=188){
