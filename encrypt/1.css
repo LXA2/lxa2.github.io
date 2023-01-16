@@ -1,0 +1,108 @@
+body{
+	margin: 0%;
+}
+.pc{
+	margin-top: 2.5em;
+}
+.pcop{
+	height:4.5em;
+	margin: auto;
+}
+.pc1_en::after{
+	content: "Encrypt";
+	font-size: 2.5em;
+	margin-left: 0.5em;
+}
+#pc1_zh::after{
+	content: "加密";
+	font-size: 2em;
+	margin-left: 0.8em;
+	margin-right: 2em;
+}
+.pc2_de::after{
+	content: "Decrypt";
+	font-size: 2.5em;
+	margin-left: 0.5em;
+}
+#pc2_zh::after{
+	content: "解密";
+	font-size: 2em;
+	margin-left: 0.8em;
+	margin-right: 2em;
+}
+.pca{
+	width: 98%;
+	margin: auto;
+	z-index: 1;
+	min-height: 200px;
+	background-color: #dddddd;
+	border-radius: 1.5em;
+}
+.pcul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #aaaaaa;
+    position: fixed;
+    top: 0;
+    width: 100%;
+	border-bottom: 2px dotted;
+}
+.pcli1 {
+   float: left;
+   color: white;
+   background-color: ff0000;
+   border-right: 3px solid #000000;
+   border-left: 3px solid #000000;
+}
+.pcli1:hover{
+	float: left;
+	color: black;
+	background-color: ff9999;
+}
+.pcli2 {
+   float: left;
+   color: white;
+   background-color: ffffff00;
+   border-right: 3px solid #000000;
+}
+.pcli2:hover {
+   float: left;
+   color: black;
+}
+.pcTitle1{
+	font-size: 1.8em;
+	text-align: center;
+}
+.pcBlank1{
+	height: 1em;
+}
+#pc3::after{
+	content: "Asymmetric Encryption";
+}
+#pc4::after{
+	content: "非对称加密";
+}
+.pcBlank2{
+	height: 2.5em;
+}
+.pcPubKey{
+	margin: auto;
+	font-size: 1.6em;
+	width: 90%;
+}
+.pcPubKeyTitle::before{
+	content: "Public Key";
+	margin-right: 1em;
+}
+.pcPubKeyTitle::after{
+	content: "公钥";
+}
+#pcPubKeyCopy{
+	margin-top: 1.2em;
+	width: 80%;
+	font-size: 0.6em;
+	cursor: text;
+}
+

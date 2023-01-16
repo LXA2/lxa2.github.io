@@ -1,0 +1,57 @@
+body{
+	margin: 0%;
+	background-color: #dadada;
+	cursor: crosshair;
+}
+.title{
+	text-align: center;
+	margin-top: 1.5%;
+	font-size: 5em;
+}
+.line{
+	margin: auto;
+	margin-top: 1%;
+	/* width: 0%; */
+	height: 5px;
+	/* min-width: 1080px; */
+	background-color: #ff0000dd;
+	animation-delay: 2s;
+	animation: a 2s;
+	animation-fill-mode:forwards; 
+}
+@keyframes a{
+	from{
+		opacity: 0;
+		width: 0%;
+		min-width: 0px;
+	}
+	to{
+		opacity: 1;
+		width: 95%;
+		min-width: 980px;
+	}
+}
+.container{
+	margin: auto;
+	margin-top: 5%;
+	width: 60%;
+	min-height: 50px;
+	min-width: 950px;
+	background-color: #ffffffdd;
+}
+#_a::before{
+	content: "index";
+}
+.ula{
+	
+}
+.ulTitle{
+	font-size: 2.8em;
+	color: aqua;
+}
+#_b::after{
+	content: "Tool Box";
+}
+li{
+	margin-top: 3.5em;
+}

@@ -1,0 +1,98 @@
+body{
+	padding: 0%;
+	margin: 0%;
+	background-color: black;
+}
+.top{
+	width: 100%;
+	position: fixed;
+	background-color: #CCCCCC;
+	height: 3.5em;
+	margin-top: 0%;
+	transition: all 0.5s; 
+}
+.top:hover{
+	height: 5em;
+}
+.settingsICON{
+	width: 2.7em;
+	height: 2.7em;
+	/*margin: auto;*/
+	margin-top: 0.4em;
+	margin-left: 0.8em;
+	transition: all 0.8s; 
+}
+.settingsICON:hover{
+	width: 4em;
+	height: 4em;
+    transform: rotate(120deg);
+}
+.settings{
+	width: 31em;
+	height: 15em;
+	background-color: #000000;
+	opacity: 0;
+	position: fixed;
+	margin-left: -35em;
+	margin-top: -10em;
+	transition: all 0.8s;
+	border-radius: 15em;
+	animation-delay: 1s;
+}
+.blank{
+	height: 3.2em;
+}
+.tArea{
+	width: 95%;
+	margin: auto;
+}
+.a{
+	width: 100%;
+	margin-top: 3%;
+	height: auto;
+	border-radius: 5px;
+	font-size: 1.8em;
+	color: black;
+	/*margin: auto;*/
+}
+.kws{
+	color: red;
+	background-color: #555555;
+	font-size: 3em;
+	text-align: center;
+	border-radius: 15px;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+p > input{
+	background-color: #ff9999;
+	color: white;
+}
+.mostImpKW{
+	background-color: #FF5555;
+	color: white;
+}
+/*.inform{
+	back
+}*/
+.set1{
+	margin-top: 1em;
+	margin-left: 5em;
+	height: 6em;
+}
+#op1{
+	width: 3em;
+	/*height: 2.5em;*/
+	opacity: 1;
+	font-size: 2em;
+}
+#op1_2{
+	width: 15em;
+	margin-left: 3em;
+	opacity: 1;
+}
+#description1{
+	font-size: 2em;
+	color: white;
+	margin-top: 2em;
+}
