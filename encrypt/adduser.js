@@ -1,13 +1,16 @@
 var strength=0;
 let user=Object();
-if (localstorage=="") {
-    
+if (localStorage.getItem("encryptUser")==null) {
+    user.u1=Object();
+    user.u1.name="默认用户"+new Date().getUTCDate;
+    user.u1.strength=2;
+    alert("aaa")
+    localStorage.setItem("encryptUser",JSON.stringify(user));
 } else {
-    
+    user=JSON.parse(localStorage.getItem("encryptUser"));
+    console.log(user);
 }
-user.u1=Object();
-u1.name="默认用户"+new Date().getUTCDate;
-u1.strength=2;
+
 function adduser(a){
     switch (a) {
         case 1:
@@ -15,7 +18,7 @@ function adduser(a){
             document.getElementById("addUserQuery").innerHTML=`<p>
             用户名称
         </p>
-        <input type="text" id="userName" style="height: 1.5em;width: 30em;font-size: 0.8em;">
+        <input type="text" id="userName" style="height: 1.5em;width: 30em;font-size: 0.8em;" value="">
         <hr>
         <p>
             加密强度（强加密运算时间可能过长）
@@ -34,9 +37,11 @@ function adduser(a){
             break;
     
         case 2:
-            if (document.getElementById("userName").ariaValueMax.length!=0) {
+            if (document.getElementById("userName").) {
                 if (strength!=0) {
-                    
+                    user[`${user.length+1}`]=Object();
+                    user[`${user.length}`][]
+                    document.getElementById("addUserQuery").innerHTML="";
                 } else {
                     alert("请选择加密强度");
                 }
