@@ -41,33 +41,39 @@ function toUnicode(theString) {
   return unicodeString;
 }
 function randomNum(min,max){ 
-    // switch(arguments.length){ 
-    //     case 1: 
-    //         return parseInt(Math.random()*minNum+1,10); 
-    //     	break; 
-    //     case 2: 
-    //         return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
-    //     	break; 
-    //     default: 
-    //     return 0; 
-    //     	break; 
-    // } 
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 } 
 var p,q,n,n2,e,d;
 function generatePrivateKey(){
-	var i=randomNum(1000,9999);
-	while ((i/2)%1===0||(i/3)===0||(i/5)===0||(i/7)===0){i=randomNum(1000,9999);}
+	var i=randomNum(1000,5000);
+	while ((i/2)%1===0||(i/3)%1===0||(i/5)%1===0||(i/7)%1===0||(i/11)%1===0||(i/13)%1===0||(i/17)%1===0||(i/19)%1===0||(i/23)%1===0||(i/29)%1===0||(i/31)%1===0||(i/37)%1===0||(i/41)%1===0||(i/43)%1===0||(i/47)%1===0||(i/53)%1===0||(i/59)%1===0||(i/61)%1===0||(i/67)%1===0||(i/71)%1===0||(i/73)%1===0||(i/79)%1===0||(i/83)%1===0||(i/89)%1===0||(i/87)%1===0){
+		i=randomNum(1000,5000);
+	}
 	p=i;
-	var i=randomNum(1000,9999);
-	while ((i/2)%1===0||i==p||(i/3)===0||(i/5)===0||(i/7)===0){i=randomNum(1000,9999);}
+	var i=randomNum(1000,5000);
+	while (i==p||(i/2)%1===0||(i/3)%1===0||(i/5)%1===0||(i/7)%1===0||(i/11)%1===0||(i/13)%1===0||(i/17)%1===0||(i/19)%1===0||(i/23)%1===0||(i/29)%1===0||(i/31)%1===0||(i/37)%1===0||(i/41)%1===0||(i/43)%1===0||(i/47)%1===0||(i/53)%1===0||(i/59)%1===0||(i/61)%1===0||(i/67)%1===0||(i/71)%1===0||(i/73)%1===0||(i/79)%1===0||(i/83)%1===0||(i/89)%1===0||(i/87)%1===0){
+		i=randomNum(1000,5000);
+	}
 	q=i;
 	n=p*q;
 	n2=(p-1)*(q-1);
-
-
+	var i=randomNum(3000,5000);
+	while ((n2/i)%1===0||(i/2)%1===0||(i/3)%1===0||(i/5)%1===0||(i/7)%1===0||(i/11)%1===0||(i/13)%1===0||(i/17)%1===0||(i/19)%1===0||(i/23)%1===0||(i/29)%1===0||(i/31)%1===0||(i/37)%1===0||(i/41)%1===0||(i/43)%1===0||(i/47)%1===0||(i/53)%1===0||(i/59)%1===0||(i/61)%1===0||(i/67)%1===0||(i/71)%1===0||(i/73)%1===0||(i/79)%1===0||(i/83)%1===0||(i/89)%1===0||(i/87)%1===0){
+		i=randomNum(3000,5000);
+	}
+	e=i;
+	i=1;
+	while ((e*i)%n2!=1){
+		i++;
+	}
+	d=i;
+	document.getElementById("pcPubKeyCopy").value=e;
 	console.log(`p:"${p}",q:"${q}",n:${n},φn:${n2},e:${e},d:${d};`);
 }
+// var xxxx=prompt("aaa");
+// var bia=BigInt(xxxx),bib=BigInt(e),bic=BigInt(n);bid=BigInt(d);
+// console.log((((bia**bib)%bic)**bid)%bic);
+// console.log((bia**bib)%bic);
 
 
 

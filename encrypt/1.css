@@ -78,9 +78,9 @@ body{
 .pcBlank1{
 	height: 1em;
 }
-#pc3::after{
+/* #pc3::after{
 	content: "Asymmetric Encryption";
-}
+} */
 #pc4::after{
 	content: "非对称加密";
 }
@@ -92,12 +92,13 @@ body{
 	font-size: 1.6em;
 	width: 90%;
 }
-.pcPubKeyTitle::before{
-	content: "Public Key";
+/* .pcPubKeyTitle::before{
+	content: "User";
 	margin-right: 1em;
-}
+} */
 .pcPubKeyTitle::after{
-	content: "公钥";
+	content: "用户";
+	margin-right: 2em;
 }
 #pcPubKeyCopy{
 	margin-top: 1.2em;
@@ -105,4 +106,31 @@ body{
 	font-size: 0.6em;
 	cursor: text;
 }
-
+.addUser{
+	width: 1.7em;
+	height: 1.7em;
+	transition: all 1s;
+}
+/* #addUser::before{
+	content:"Add User";
+} */
+.addUser:hover{
+	width: 2em;
+	height: 2em;
+	transform: rotate(450deg);
+}
+#addUser::before{
+	content:"添加用户";
+}
+.addUserQuery{
+	border-radius: 10px;
+	margin-top: 2em;
+	border: #000000 2px;
+	border-style: solid;
+}
+.addUserQuery>input{
+	margin-left: 4em;
+}
+.addUserQuery>p{
+	margin-left: 1em;
+}
