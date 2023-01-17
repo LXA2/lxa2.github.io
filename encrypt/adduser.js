@@ -10,11 +10,12 @@ if (localStorage.getItem("encryptUser")==null) {
     user=JSON.parse(localStorage.getItem("encryptUser"));
     console.log(user);
 }
-
-function adduser(a){
+document.getElementById("addUserQuery").style.display="none";
+function addUser(a){
     switch (a) {
         case 1:
             strength=0;
+            document.getElementById("addUserQuery").style.display="block";
             document.getElementById("addUserQuery").innerHTML=`<p>
             用户名称
         </p>
@@ -33,21 +34,30 @@ function adduser(a){
         强
         <div></div>
         <hr>
-        <button onclick="addUser(2);" style="font-size: 1.2em;margin: auto;margin-left: 4em;margin-bottom: 0.5em;">确定</button>`
+        <button onclick="addUser(2);" style="font-size: 1.2em;margin: auto;margin-left: 4em;margin-bottom: 0.5em;">确定</button>
+        <button onclick="addUser(3);" style="font-size: 1.2em;margin: auto;margin-left: 8em;margin-bottom: 0.5em;">关闭</button>`;
             break;
     
         case 2:
-            if (document.getElementById("userName").) {
+            var a=document.getElementById("userName").value;
+            if (a.length!=0) {
                 if (strength!=0) {
+                    document.getElementById("addUserQuery").style.display="none";
                     user[`${user.length+1}`]=Object();
-                    user[`${user.length}`][]
+                    user[`${user.length}`].name=a;
+                    user[`${user.length}`].strength=strength;
                     document.getElementById("addUserQuery").innerHTML="";
+                    alert("添加成功");
                 } else {
                     alert("请选择加密强度");
                 }
             }else{
                 alert("用户名不能为空");
             }
+            break;
+        case 3:
+            document.getElementById("addUserQuery").style.display="none";
+            document.getElementById("addUserQuery").innerHTML="";
             break;
     }
 }

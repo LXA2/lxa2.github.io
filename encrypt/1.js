@@ -15,12 +15,16 @@ function chMode(a){
 		console.log("en")
 		document.getElementById("pcli1").style.backgroundColor="#ff0000";
 		document.getElementById("pcli2").style.backgroundColor="#ff000000";
+		document.getElementById("encrypt").style.display="block";
+		document.getElementById("decrypt").style.display="none";
 	}
 	if (a=="de") {
 		mode="de";
 		console.log("de")
 		document.getElementById("pcli1").style.backgroundColor="#ff000000";
 		document.getElementById("pcli2").style.backgroundColor="#ff0000";
+		document.getElementById("encrypt").style.display="none";
+		document.getElementById("decrypt").style.display="block";
 	}
 }
 function pcCopy1() {
