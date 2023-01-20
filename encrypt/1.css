@@ -134,3 +134,12 @@ body{
 .addUserQuery>p{
 	margin-left: 1em;
 }
+.encryptTextDiv{
+	margin-top: 3em;
+}
+#encryptText{
+	width: 96%;
+	margin-left: 2%;
+	max-width: 100%;
+	/* margin: auto; */
+}

@@ -1,14 +1,34 @@
 var strength=0;
-let user=Object();
+let user=Object();//          用户名
+let userStrength=Object();//  用户加密强度
+let userPrivateKey=Object();//用户私钥
+let userPublicKey=Object();// 用户公钥
+var userNum=0;//              用户数
 if (localStorage.getItem("encryptUser")==null) {
-    user.u1=Object();
-    user.u1.name="默认用户"+new Date().getUTCDate;
-    user.u1.strength=2;
-    alert("aaa")
+    user.u1=`默认用户${new Date().getTime()}`;
+    userStrength.u1=2;
+    userPrivateKey.u1=generatePrivateKey(2);
+    document.getElementById("pcPubKeyCopy").value=e;
+    userPublicKey.u1=e;
+    userNum=1;
     localStorage.setItem("encryptUser",JSON.stringify(user));
+    localStorage.setItem("encryptUserStrength",JSON.stringify(userStrength));
+    localStorage.setItem("encryptUserPrivateKey",JSON.stringify(userPrivateKey));
+    localStorage.setItem("encryptUserPublicKey",JSON.stringify(userPublicKey));
 } else {
     user=JSON.parse(localStorage.getItem("encryptUser"));
+    userStrength=JSON.parse(localStorage.getItem("encryptUserStrength"));
+    userPrivateKey=JSON.parse(localStorage.getItem("encryptUserPrivateKey"));
+    userPublicKey=JSON.parse(localStorage.getItem("encryptUserPublicKey"));
+    userNum=Object.keys(user).length;
+    document.getElementById("pcPubKeyCopy").value=userPublicKey.u1;
     console.log(user);
+}//读取localstorage  ，  设置默认用户
+function store(){//保存数据
+    localStorage.setItem("encryptUser",JSON.stringify(user));
+    localStorage.setItem("encryptUserStrength",JSON.stringify(userStrength));
+    localStorage.setItem("encryptUserPrivateKey",JSON.stringify(userPrivateKey));
+    localStorage.setItem("encryptUserPublicKey",JSON.stringify(userPublicKey));
 }
 document.getElementById("addUserQuery").style.display="none";
 function addUser(a){
@@ -43,10 +63,13 @@ function addUser(a){
             if (a.length!=0) {
                 if (strength!=0) {
                     document.getElementById("addUserQuery").style.display="none";
-                    user[`${user.length+1}`]=Object();
-                    user[`${user.length}`].name=a;
-                    user[`${user.length}`].strength=strength;
+                    userNum++;
+                    user[`u${userNum}`]=a;
+                    userStrength[`u${userNum}`]=strength;
+                    userPrivateKey[`u${userNum}`]=generatePrivateKey(strength);
+                    userPublicKey[`u${userNum}`]=e;
                     document.getElementById("addUserQuery").innerHTML="";
+                    store();
                     alert("添加成功");
                 } else {
                     alert("请选择加密强度");

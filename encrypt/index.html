@@ -47,6 +47,7 @@
 									加密强度（强加密运算时间可能过长）
 								</p>
 								<input type="radio" name="encryptStrength" style="zoom: 150%;" onclick="strength=1">
+								
 								弱
 								<div></div>
 								<input type="radio" name="encryptStrength" style="zoom: 150%;" onclick="strength=2">
@@ -60,6 +61,10 @@
 							</div>
 							<input type="text" id="pcPubKeyCopy" disabled>
 							<button style="font-size: 0.98em;" onclick="pcCopy1();">&nbsp;点击复制&nbsp;</button>
+						</div>
+						<div class="encryptTextDiv">
+							<h3 style=>请输入原文</h3>
+							<textarea name="" id="encryptText" cols="30" rows="20"></textarea>
 						</div>
 				</div>
 			</div>
@@ -76,6 +81,8 @@
 			
 		</div>
 	</body>
+	<script src="./qrcode.js"></script>
 	<script src="./1.js"></script>
 	<script src="./adduser.js"></script>
+	
 </html>
