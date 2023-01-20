@@ -12,7 +12,9 @@ function copy2(){
     navigator.clipboard.writeText(copyText.value);
 }
 function url(a){
-    a;
+    var res,b;
+    
+    res=`https://lxa2.github.io/url/index.html?`
 }
 function text(a){
     a;
