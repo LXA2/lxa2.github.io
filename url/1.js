@@ -15,15 +15,17 @@ function copy2(){
     var b,c;
 function url(a){
     // var b,c;
+	console.log(a);
 	b=a.charCodeAt(0).toString();
-    for (var i = 1; i < (a.length-1); i++) {
+    for (var i = 1; i < (a.length); i++) {
 		c=a.charCodeAt(i);
-		while (c.length<5){
+		while (c.toString().length<5){
 			c="0"+c.toString();
 		}
-		console.log(i);
+		// console.log(i);
     	b=b+c;
     }
+	console.log(b);
 	b=toBase(BigInt(b));
 	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${b}`;
 	document.getElementById("qr1").innerHTML="";
@@ -42,6 +44,8 @@ function text(a){
 // }
 const base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@$^&*()-=_+[]{}|;:,./?';
 const ben = 87n;
+// const base="0123456789ABCDEF"
+// const ben=16n;
 
 function toBase(bint) {
 	var num=bint;
@@ -55,10 +59,23 @@ function toBase(bint) {
 function to10(str) {
 	var baseNum=str;
     baseNum = baseNum.split('').reverse().join('');
-    let val = 0n;
+    let val = 0n;/*,i2=BigInt(baseNum.length+1);*/
     for (let i = 0n; i < BigInt(baseNum.length); i++) {
         let c = baseNum[i];
         val += (BigInt(base.indexOf(c)) * (ben**i));
+		// i2--;
     }
-    return Number(val);
+    return val.toString();
 }
+// function to10(str) {
+// 	var baseNum=str;
+//     baseNum = baseNum.split('').reverse().join('');
+// 	console.log(baseNum);
+//     let val = 0n,i2=BigInt(baseNum.length-1);
+//     for (let i = 0n; i < BigInt(baseNum.length); i++) {
+//         let c = baseNum[i];
+//         val += (BigInt(base.indexOf(c)) * (ben**i2));
+// 		i2--;
+//     }
+//     return Number(val);
+// }

@@ -4,11 +4,12 @@ s=s0.charAt(1);
 for (var i = 2; i < s0.length; i++) {
 	s+=s0.charAt(i);
 }
+console.log(s);
 switch (version){
 	case 1:
-		s=to10(s.toString()).toString();
-		for (var i=0;i<s.length;i=i+4){
-			content+=String.fromCharCode(`${s.charAt(i)}${s.charAt(i+1)}${s.charAt(i+2)}${s.charAt(i+3)}`)
+		s=to10(s.toString());
+		for (var i=0;i<s.length;i=i+5){
+			content+=String.fromCharCode(`${s[i]}${s[i+1]}${s[i+2]}${s[i+3]}${s[i+4]}`);
 		}
 		document.getElementById("p").innerHTML=content;
 		break;
