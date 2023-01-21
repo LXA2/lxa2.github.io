@@ -29,10 +29,6 @@ function url(a){
     }
 	console.log(b);
 	b=toBase(BigInt(b));
-	while (zero!=0){
-		b="0"+b;
-		zero--;
-	}
 	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${b}`;
 	document.getElementById("qr1").innerHTML="";
 	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?${b}`);
