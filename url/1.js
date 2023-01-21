@@ -12,11 +12,13 @@ function copy2(){
     copyText.setSelectionRange(0, 99999); 
     navigator.clipboard.writeText(copyText.value);
 }
-    var b,c;
 function url(a){
-    // var b,c;
+    var b,c,zero=0;
 	console.log(a);
 	b=a.charCodeAt(0).toString();
+	if (b.length<5){
+		zero+=5-b.length;
+	}
     for (var i = 1; i < (a.length); i++) {
 		c=a.charCodeAt(i);
 		while (c.toString().length<5){
@@ -27,6 +29,10 @@ function url(a){
     }
 	console.log(b);
 	b=toBase(BigInt(b));
+	while (zero!=0){
+		b="0"+b;
+		zero--;
+	}
 	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${b}`;
 	document.getElementById("qr1").innerHTML="";
 	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?${b}`);
