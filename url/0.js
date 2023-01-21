@@ -2,7 +2,7 @@ var s0=location.search;
 var s,content="";
 s=s0.charAt(1);
 for (var i = 2; i < s0.length; i++) {
-	s=s+s0.charAt(i);
+	s+=s0.charAt(i);
 }
 switch (version){
 	case 1:

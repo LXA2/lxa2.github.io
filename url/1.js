@@ -12,8 +12,9 @@ function copy2(){
     copyText.setSelectionRange(0, 99999); 
     navigator.clipboard.writeText(copyText.value);
 }
-function url(a){
     var b,c;
+function url(a){
+    // var b,c;
 	b=a.charCodeAt(0).toString();
     for (var i = 1; i < (a.length-1); i++) {
 		c=a.charCodeAt(i);
@@ -23,9 +24,10 @@ function url(a){
 		console.log(i);
     	b=b+c;
     }
-	b=toBase(b);
+	b=toBase(BigInt(b));
 	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${b}`;
-	new QRCode(document.getElementById("res1"),`https://lxa2.github.io/url/index.html?${b}`);
+	document.getElementById("qr1").innerHTML="";
+	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?${b}`);
 }
 function text(a){
 
@@ -33,25 +35,29 @@ function text(a){
 
 
 
-
-
-// const base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// const ben = base.length;
-
-// // function toBase(num) {
-//     let arr = [];
-//     while (num > 0) {
-//         arr.push(base[num % ben]);
-//         num = Math.floor(num / ben);
-//     }
-//     return arr.reverse().join('');
+// const base="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@$^&*()-=_+[]{}|;:,./?"
+// function toBase87(num){
+	
 // }
-// function to10(baseNum) {
-//     baseNum = baseNum.split('').reverse().join('');
-//     let val = 0;
-//     for (let i = 0; i < baseNum.length; i++) {
-//         let c = baseNum[i];
-//         val += (base.indexOf(c) * Math.pow(ben, i));
-//     }
-//     return val;
-// }
+const base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@$^&*()-=_+[]{}|;:,./?';
+const ben = 87n;
+
+function toBase(bint) {
+	var num=bint;
+    let arr = [];
+    while (num > 0n) {
+        arr.push(base[num % ben]);
+        num = (num-(num%ben)) / ben;
+    }
+    return arr.reverse().join('');
+}
+function to10(str) {
+	var baseNum=str;
+    baseNum = baseNum.split('').reverse().join('');
+    let val = 0n;
+    for (let i = 0n; i < BigInt(baseNum.length); i++) {
+        let c = baseNum[i];
+        val += (BigInt(base.indexOf(c)) * (ben**i));
+    }
+    return Number(val);
+}
