@@ -35,6 +35,7 @@ function text(a){
 
 
 
+
 // const base="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@$^&*()-=_+[]{}|;:,./?"
 // function toBase87(num){
 	
