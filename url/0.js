@@ -1,5 +1,7 @@
 var s0=location.search;
 var s="",content="";
+// var edit=true;
+var edit=false;
 // for (var i = 2; i < s0.length; i++) {
 // 	s+=s0.charAt(i);
 // }
@@ -17,7 +19,10 @@ switch (version){
 		}
 		method=to10(s0.charAt(5));
 		if (Number(method)<=10||Number(method)>68){
-			console.log(`---ERROR---[method:${method}]`)
+			console.log(`---ERROR---[method:${method}]`);
+			if (edit==false) {
+				window.location.replace("https://lxa2.github.io/404.html");
+			}
 		}
 		console.log(`method:${method}`);
 		s=to10(s.toString());
@@ -41,5 +46,8 @@ switch (version){
 	case 7:
 		break;
 	default:
+		if (edit==false) {
+			window.location.replace("https://lxa2.github.io/404.html");
+		}
 		break;
 }
