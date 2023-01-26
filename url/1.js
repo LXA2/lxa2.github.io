@@ -62,7 +62,7 @@ function to10(str) {
     }
     return val.toString();
 }
-function show1() {
+//function show1() {
 	document.getElementById("body").innerHTML=`	
     <div class="main">
         <h2>此处输入URL:</h2>
@@ -88,7 +88,7 @@ function show1() {
         </div>
     </div>`;
 }
-function show2() {
+//function show2() {
 	document.getElementById("body").innerHTML=`	<div class="main1">
 		<p id="p"></p>
 	</div>
@@ -116,7 +116,7 @@ function show2() {
         </div>
     </div>`;
 }
-function show3() {
+//function show3() {
 	document.getElementById("body").innerHTML=`	<div class="main1">
 		<p id="p"></p>
 	</div>`

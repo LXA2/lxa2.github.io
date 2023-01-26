@@ -22,4 +22,104 @@ body{
     width: 100%;
     font-size: 1.5em;
 }
+#after1::after{
+	content: "显示空白页面";
+}
+#blankpage{
+	width: 2em;
+	height: 2em;
+}
+.urlq1{
+	font-size: 1.3em;
+	margin-top: 0.8em;
+}
+#starttime{
+	margin-top: 0.5em;
+	width: 2em;
+	height: 2em;
+}
+#after2::after{
+	content:"可用起始时间";
+}
+#s-time{
+	margin-left: 5em;
+	font-size: 1em;
+}
+#endtime{
+	margin-top: 0.5em;
+	width: 2em;
+	height: 2em;
+}
+#after9::after{
+	content:"可用截止时间";
+}
+#e-time{
+	margin-left: 5em;
+	font-size: 1em;
+}
+#after3::after{
+	content: "年";
+	margin-left: 0.2em;
+	margin-right: 0.5em;
+}
+#after4::after{
+	content: "月";
+	margin-left: 0.2em;
+	margin-right: 0.5em;
+}
+#after5::after{
+	content: "日";
+	margin-left: 0.2em;
+	margin-right: 0.5em;
+}
+#after6::after{
+	content: "时";
+	margin-left: 0.2em;
+	margin-right: 0.5em;
+}
+#after7::after{
+	content: "分";
+	margin-left: 0.2em;
+	margin-right: 0.5em;
+}
+#after8::after{
+	content: "秒";
+	margin-left: 0.2em;
+	margin-right: 0.5em;
+}
+#h2::after{
+	content: "此处输入URL:";
+}
+#h2-2::after{
+	content: "此处输入文本:";
+}
+#password{
+	margin-top: 0.5em;
+	width: 2em;
+	height: 2em;
+}
+#after10::after{
+	content: "启用密钥";
+}
+#password-input{
+	margin-left: 5em;
+	font-size: 1em;
+}
+#after11::after{
+	content: "密钥";
+}
+#after13{
+	color: red;
+	margin-left: 1.5em;
+	animation: a 0.8s infinite;
+}
+@keyframes a{
+	0%{color: red;}
+	42%{color: red;}
+	58%{color: white;}
+	100%{color: white;}
+}
+#after12::after{
+	content: "确认密钥";
+}
 
