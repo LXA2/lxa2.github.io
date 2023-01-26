@@ -1,5 +1,5 @@
 //document.getElementById("body").innerHTML=``;
-var version=1;
+// var version=1;
 function copy1(){
     var copyText = document.getElementById("res1");
     copyText.select();
