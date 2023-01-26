@@ -1,13 +1,15 @@
 var s0=location.search;
+var s="",content="";
+var edit=true;
+// var edit=false;
+// for (var i = 2; i < s0.length; i++) {
+// 	s+=s0.charAt(i);
+// }
+// console.log(s);
+var version=Number(to10(s0.charAt(4)));
+var method1,method2,method3;
+var start_time="",end_time="";
 if (s0!="") {
-	var s="",content="";
-	// var edit=true;
-	var edit=false;
-	// for (var i = 2; i < s0.length; i++) {
-	// 	s+=s0.charAt(i);
-	// }
-	// console.log(s);
-	var version=Number(to10(s0.charAt(4)));
 	console.log(`version:${version}`);
 	switch (version){
 		case 1://--------------------1--------------------1--------------------1--------------------1--------------------1
@@ -24,12 +26,81 @@ if (s0!="") {
 				if (edit==false) {
 					window.location.replace("https://lxa2.github.io/404.html");
 				}
+				break;
 			}
 			console.log(`method:${method}`);
+			method1=Number(method.toString().charAt(0));
+			switch (method.toString().charAt(1)) {
+				case "1":
+					method2=1;
+					method3=1;
+					break;
+				case "2":
+					method2=2;
+					method3=1;
+					break;
+				case "3":
+					method2=3;
+					method3=1;
+					break;
+				case "4":
+					method2=4;
+					method3=1;
+					break;
+				case "5":
+					method2=1;
+					method3=2;
+					break;
+				case "6":
+					method2=2;
+					method3=2;
+					break;
+				case "7":
+					method2=3;
+					method3=2;
+					break;
+				case "8":
+					method2=4;
+					method3=2;
+					break;
+				default:
+					break;
+			}
+			switch (method2){
+				case 1:
+					for (let index = 6; index < 13; index++) {
+						start_time+=s0[index];
+					}
+					
+					break;
+				case 2:
+					for (let index = 6; index < 13; index++) {
+						end_time+=s0[index];
+					}
+					break;
+				case 3:
+					for (let index = 6; index < 13; index++) {
+						start_time+=s0[index];
+					}
+					for (let index = 14; index < 21; index++) {
+						end_time+=s0[index];
+					}
+					break;
+				case 4:
+					
+					break;
+				default:
+					break;
+			}
 			s=to10(s.toString());
+			var zero=0;
+			// if ((s0.toString.length%5)!=0){
+			// 	zero=4-s0.toString.length%5;
+			// }
 			for (var i=0;i<s.length;i=i+5){
 				content+=String.fromCharCode(`${s[i]}${s[i+1]}${s[i+2]}${s[i+3]}${s[i+4]}`);
 			}
+			console.log(content);
 			document.getElementById("p").innerHTML=content;
 			
 			
@@ -53,30 +124,5 @@ if (s0!="") {
 			break;
 	}
 } else{
-	document.getElementById("body").innerHTML="	<div class="main">
-		<p id="p"></p>
-	</div>
-    <div class="main">
-        <h2>此处输入URL:</h2>
-        <textarea id="textarea" class="textarea" rows="2" oninput="url(this.value);"></textarea>
-        <div class="result">
-            <h3>结果：</h3>
-            <textarea id="res1" rows="1" style="width: 50%;cursor: text;" disabled></textarea>
-            <button onclick="copy1();">点击复制</button>
-            <h3>二维码：</h3>
-            <div id="qr1"></div>
-        </div>
-    </div>
-    <hr style="margin-top: 3em;">
-    <div class="main">
-        <h2 style="margin-top: 3em;">此处输入文本:</h2>
-        <textarea id="textarea2" class="textarea2" rows="5" oninput="text(this.value);"></textarea>
-        <div class="result2">
-            <h3>结果：</h3>
-            <textarea id="res2" rows="1" style="width: 50%;cursor: text;" disabled></textarea>
-            <button onclick="copy2();">点击复制</button>
-            <h3>二维码：</h3>
-            <div id="qr2"></div>
-        </div>
-    </div>";
+	show1();
 }

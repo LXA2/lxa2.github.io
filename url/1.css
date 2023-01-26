@@ -7,6 +7,13 @@ body{
     margin-top: 5em;
     background-color: #ff000000;
 }
+.main1{
+    margin: auto;
+    width: 90%;
+    margin-top: 5em;
+    background-color: #ff000000;
+    font-size: 1.1em;
+}
 .textarea{
     width: 100%;
     font-size: 1.5em;
