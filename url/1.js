@@ -69,15 +69,3 @@ function to10(str) {
     }
     return val.toString();
 }
-// function to10(str) {
-// 	var baseNum=str;
-//     baseNum = baseNum.split('').reverse().join('');
-// 	console.log(baseNum);
-//     let val = 0n,i2=BigInt(baseNum.length-1);
-//     for (let i = 0n; i < BigInt(baseNum.length); i++) {
-//         let c = baseNum[i];
-//         val += (BigInt(base.indexOf(c)) * (ben**i2));
-// 		i2--;
-//     }
-//     return Number(val);
-// }
