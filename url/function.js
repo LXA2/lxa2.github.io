@@ -90,7 +90,7 @@ function judgeTime(start_end,time){
 }
 function checkTime(){
     if (edit!=="true") {
-    	window.close();
+    	window.location.replace("https://lxa2.github.io/404.html");
 		error();
     }
     return "";
