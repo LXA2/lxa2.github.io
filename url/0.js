@@ -71,8 +71,13 @@ if (s0!="") {
 					for (let index = 6; index < 13; index++) {
 						start_time+=s0[index];
 					}
-					if (Number(`${s0[6]+s0[7]+s0[8]+s0[9]}`)>=new Date().getFullYear) {
+					start_time=to10(start_time);
+					if (Number(`${start_time[6]+start_time[7]+start_time[8]+start_time[9]}`)>=new Date().getFullYear) {
+						if (Number(`${start_time[6]+start_time[7]+start_time[8]+start_time[9]}`)>=new Date().getFullYear) {
 						
+						} else {
+							error();
+						}
 					} else {
 						error();
 					}
@@ -81,14 +86,17 @@ if (s0!="") {
 					for (let index = 6; index < 13; index++) {
 						end_time+=s0[index];
 					}
+					end_time=to10(end_time);
 					break;
 				case 3:
 					for (let index = 6; index < 13; index++) {
 						start_time+=s0[index];
 					}
+					start_time=to10(start_time);
 					for (let index = 14; index < 21; index++) {
 						end_time+=s0[index];
 					}
+					end_time=to10(end_time);
 					break;
 				case 4:
 					
