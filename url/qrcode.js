@@ -1,3 +1,4 @@
+console.log("qrcode.js");
 /**
  * @fileoverview
  * - Using the 'QRCode for Javascript library'

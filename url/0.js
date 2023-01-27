@@ -1,3 +1,4 @@
+console.log("0.js");
 var s0=location.search;
 var s="",content="";
 var edit=true;
@@ -6,6 +7,7 @@ var edit=true;
 // 	s+=s0.charAt(i);
 // }
 // console.log(s);
+var verify="",method="";
 var version=Number(to10(s0.charAt(4)));
 var method1,method2,method3;
 var start_time="",end_time="";
@@ -13,24 +15,26 @@ if (s0!="") {
 	console.log(`version:${version}`);
 	switch (version){
 		case 1://--------------------1--------------------1--------------------1--------------------1--------------------1
-			// for (var i = 2; i < s0.length; i++) {
-			// 	s+=s0.charAt(i);
-			// }
-			var veryfy="",method="";
-			for (var i = 0; i < 2; i++) {
-				veryfy+=s0.charAt(i);
+			// var verify="",method="";
+			for (var i = 1; i < 4; i++) {
+				verify+=s0.charAt(i);
 			}
 			method=to10(s0.charAt(5));
 			if (Number(method)<=10||Number(method)>68){
 				console.log(`---ERROR---[method:${method}]`);
-				if (edit==false) {
-					window.location.replace("https://lxa2.github.io/404.html");
-				}
+				// error("^^^^^^^^^");
 				break;
 			}
 			console.log(`method:${method}`);
 			method1=Number(method.toString().charAt(0));
-			switch (method.toString().charAt(1)) {
+			if (method1==1||method1==2||method1==5){
+				show3();
+			} else if(method1==3||method1==4||method1==6){
+				show2();
+			} else{
+				error("method1");
+			}
+			switch (method.toString().charAt(1)) {//是否有time或password
 				case "1":
 					method2=1;
 					method3=1;
@@ -66,44 +70,47 @@ if (s0!="") {
 				default:
 					break;
 			}
-			switch (method2){
+			switch (method2){//判断time+截取内容
 				case 1:
-					for (let index = 6; index < 13; index++) {
+					for (let index = 6; index <= 13; index++) {
 						start_time+=s0[index];
 					}
-					start_time=to10(start_time);
-					if (Number(`${start_time[6]+start_time[7]+start_time[8]+start_time[9]}`)>=new Date().getFullYear) {
-						if (Number(`${start_time[6]+start_time[7]+start_time[8]+start_time[9]}`)>=new Date().getFullYear) {
-						
-						} else {
-							error();
-						}
-					} else {
-						error();
+					judgeTime("start",to10(start_time));
+					for (var i = 14; i < s0.length; i++) {
+						s+=s0.charAt(i);
 					}
 					break;
 				case 2:
-					for (let index = 6; index < 13; index++) {
+					for (let index = 6; index <= 13; index++) {
 						end_time+=s0[index];
 					}
-					end_time=to10(end_time);
+					judgeTime("ZYNBA!!!!!",to10(end_time));//判断ZY是否牛逼(必须是的)-(∩_∩)--{u_u}-
+					for (var i = 14; i < s0.length; i++) {
+						s+=s0.charAt(i);
+					}
 					break;
 				case 3:
-					for (let index = 6; index < 13; index++) {
+					for (let index = 6; index <= 13; index++) {
 						start_time+=s0[index];
 					}
-					start_time=to10(start_time);
-					for (let index = 14; index < 21; index++) {
+					console.log(start_time);
+					judgeTime("start",to10(start_time));
+					for (let index = 14; index <= 21; index++) {
 						end_time+=s0[index];
 					}
-					end_time=to10(end_time);
+					judgeTime("KHLNB!!!!!",to10(end_time));//判断KHL是否牛逼(必须是的) -[o_o]-   :)
+					for (var i = 22; i < s0.length; i++) {
+						s+=s0.charAt(i);
+					}
 					break;
-				case 4:
+				case 4://没有时间限制
 					
 					break;
 				default:
+					error("method");
 					break;
 			}
+			console.log(`-----------s:"${s}"`);
 			s=to10(s.toString());
 			var zero=0;
 			// if ((s0.toString.length%5)!=0){

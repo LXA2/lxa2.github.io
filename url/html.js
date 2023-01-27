@@ -1,4 +1,4 @@
-
+console.log("html.js");
 function show1() {
 	document.getElementById("body").innerHTML=`	
 	<div class="main">
