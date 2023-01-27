@@ -46,6 +46,6 @@ const main = ({emitEvents = true} = {}) => {
 };
 
 main({emitEvents: false});
-setInterval(main, 500);
+setInterval(main, 1500);
 
 export default devtools;
