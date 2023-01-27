@@ -184,7 +184,7 @@ body{
 	color: green;
 	margin-left: 1.5em;
 }
-.inputKey{
+#inputKey{
 	display: none;
 }
 #inputKey-input{

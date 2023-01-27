@@ -454,7 +454,7 @@ function show2() {
 	<div class="main1">
 		<p id="p"></p>
 	</div>
-	<div class="inputKey">
+	<div id="inputKey">
 		<div style="margin: auto;width:max-content;margin-top:3em;">
 			<input type="password" id="inputKey-input" oninput="if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
 			<button id="keyButton" disabled='true' onclick="if(document.getElementById('inputKey-input').value!=''){decrypt(document.getElementById('inputKey-input').value);}">使用此密钥解析</button>
@@ -913,7 +913,7 @@ function show3() {
 	<div class="main1">
 		<p id="p"></p>
 	</div>
-	<div class="inputKey">
+	<div id="inputKey">
 		<div style="margin: auto;width:max-content;margin-top:3em;">
 			<input type="password" id="inputKey-input" oninput="if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
 			<button id="keyButton" disabled='true' onclick="if(document.getElementById('inputKey-input').value!=''){decrypt(document.getElementById('inputKey-input').value);}">使用此密钥解析</button>

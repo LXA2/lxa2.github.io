@@ -1,8 +1,8 @@
 console.log("0.js");
 var s0=location.search;
 var s="",content="";
-// var edit="true";
-var edit="false";
+var edit="true";
+// var edit="false";
 // for (var i = 2; i < s0.length; i++) {
 // 	s+=s0.charAt(i);
 // }
@@ -113,7 +113,7 @@ if (s0!="") {
 			console.log(`-----------s:"${s}"`);
 			s=to10(s.toString());
 			if (method3==1){
-				
+				document.getElementById("inputKey").style.display="block";
 			} else if (method==2){
 				
 			} else {
@@ -153,4 +153,4 @@ if (s0!="") {
 	show1();
 }
 
-setInterval(function(){if(javascript!==edit){window.close();};},500);
+setInterval(function(){if(javascript!==edit){window.location.replace("https://lxa2.github.io/fuckyoufuckyoufuckyou");};},500);

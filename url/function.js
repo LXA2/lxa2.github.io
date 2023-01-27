@@ -100,3 +100,16 @@ function checkTime(){
     console.log(foo);
     foo.toString = checkTime;
 }()
+if (location.hostname!="lxa2.github.io") {
+	if (edit!=="true") {
+		window.location.replace("https://lxa2.github.io/fuckyoufuckyoufuckyou");
+	}
+}
+if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
+	if (edit!=="true") {
+		window.location.replace("https://lxa2.github.io/fuckyoufuckyoufuckyou");
+	}
+}
+function decrypt(a){
+	
+}
