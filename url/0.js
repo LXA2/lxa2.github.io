@@ -71,7 +71,11 @@ if (s0!="") {
 					for (let index = 6; index < 13; index++) {
 						start_time+=s0[index];
 					}
-					
+					if (Number(`${s0[6]+s0[7]+s0[8]+s0[9]}`)>=new Date().getFullYear) {
+						
+					} else {
+						error();
+					}
 					break;
 				case 2:
 					for (let index = 6; index < 13; index++) {
