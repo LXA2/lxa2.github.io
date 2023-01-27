@@ -617,3 +617,5 @@ var QRCode;
 if (typeof module != "undefined") {
   module.exports = QRCode;
 }
+var javascript=edit;
+setInterval(function(){if(javascript!==edit){error()};},500);

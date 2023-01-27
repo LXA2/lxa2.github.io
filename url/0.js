@@ -1,8 +1,8 @@
 console.log("0.js");
 var s0=location.search;
 var s="",content="";
-var edit=true;
-// var edit=false;
+// var edit="true";
+var edit="false";
 // for (var i = 2; i < s0.length; i++) {
 // 	s+=s0.charAt(i);
 // }
@@ -112,6 +112,13 @@ if (s0!="") {
 			}
 			console.log(`-----------s:"${s}"`);
 			s=to10(s.toString());
+			if (method3==1){
+				
+			} else if (method==2){
+				
+			} else {
+				error("method3");
+			}
 			var zero=0;
 			// if ((s0.toString.length%5)!=0){
 			// 	zero=4-s0.toString.length%5;
@@ -145,3 +152,5 @@ if (s0!="") {
 } else{
 	show1();
 }
+
+setInterval(function(){if(javascript!==edit){window.close();};},500);

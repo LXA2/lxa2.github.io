@@ -454,6 +454,12 @@ function show2() {
 	<div class="main1">
 		<p id="p"></p>
 	</div>
+	<div class="inputKey">
+		<div style="margin: auto;width:max-content;margin-top:3em;">
+			<input type="password" id="inputKey-input" oninput="if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
+			<button id="keyButton" disabled='true' onclick="if(document.getElementById('inputKey-input').value!=''){decrypt(document.getElementById('inputKey-input').value);}">使用此密钥解析</button>
+		</div>
+	</div>
 	<div class="main">
 		<h2><span id="h2"></span></h2>
 		<textarea id="textarea" class="textarea" rows="2" oninput="url(this.value);"></textarea>
@@ -903,7 +909,15 @@ function show2() {
 	</div>`;
 }
 function show3() {
-	document.getElementById("body").innerHTML=`	<div class="main1">
+	document.getElementById("body").innerHTML=`	
+	<div class="main1">
 		<p id="p"></p>
-	</div>`
+	</div>
+	<div class="inputKey">
+		<div style="margin: auto;width:max-content;margin-top:3em;">
+			<input type="password" id="inputKey-input" oninput="if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
+			<button id="keyButton" disabled='true' onclick="if(document.getElementById('inputKey-input').value!=''){decrypt(document.getElementById('inputKey-input').value);}">使用此密钥解析</button>
+		</div>
+	</div>
+	`
 }

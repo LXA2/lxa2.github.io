@@ -1,8 +1,12 @@
 console.log("function.js");
 function error(error){
 	console.log(`error:[${error}]`);
-    if (edit==false) {
+    if (edit=="false") {
         window.location.replace("https://lxa2.github.io/404.html");
+    }else if (edit=="true") {
+    	
+    } else{
+    	window.location.replace("https://lxa2.github.io/404.html");
     }
 	// window.location.replace("https://lxa2.github.io/404.html");
 }
@@ -84,3 +88,15 @@ function judgeTime(start_end,time){
 		}
 	}
 }
+function checkTime(){
+    if (edit!=="true") {
+    	window.close();
+		error();
+    }
+    return "";
+}
+ !function () {
+    let foo = /./;
+    console.log(foo);
+    foo.toString = checkTime;
+}()
