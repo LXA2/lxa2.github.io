@@ -1,8 +1,8 @@
 console.log("1.js");
 let u=Object();
 let t=Object();
-u.blank="";u.auto="";u.startTime="";u.endTime="";u.key="";
-t.blank="";t.startTime="";t.endTime="";t.key="";
+u.blank="";u.auto="";u.startTime="";u.endTime="";u.key="";u.t1=Object();u.t2=Object();
+t.blank="";t.startTime="";t.endTime="";t.key="";t.t1=Object();t.t2=Object();
 // u.startTime=Object();u.endTime=Object();u.key=Object();
 // u.startTime.year="";u.startTime.month="";u.startTime.year=""
 function copy1(){
@@ -18,19 +18,20 @@ function copy2(){
     navigator.clipboard.writeText(copyText.value);
 }
 function url(a){
-    console.log("url","color:red");/*
     if (a==""||a==undefined||a==null) {
         a=document.getElementById("textarea").value;
     }
     ch();
-    var b,c;//zero=0;
+    if (a.length==0) {
+        return;
+    }
+    var b,c,key,len,m,m1,m2,verify1,st,et;
 	if (edit==true) {
 		console.log(a);
 	}
+    st=u.t1.year+u.t1.month+u.t1.date+u.t1.hour+u.t1.minute+u.t1.second;
+    et=u.t2.year+u.t2.month+u.t2.date+u.t2.hour+u.t2.minute+u.t2.second;
 	b=a.charCodeAt(0).toString();
-	// if (b.length<5){
-	// 	zero+=5-b.length;
-	// }
     for (var i = 1; i < (a.length); i++) {
 		c=a.charCodeAt(i);
 		while (c.toString().length<5){
@@ -38,24 +39,93 @@ function url(a){
 		}
     	b=b+c;
     }//转为unicode（str）
-	if (edit==true) {
-		console.log(b);
+    if (edit==true) {
+		console.log(`b:${b}/b.length:${b.length}`);
 	}
     if (u.key==true) {
-        
+        if (document.getElementById("password-1").value!=document.getElementById("password-2").value) {
+            return;
+        }
+        key=document.getElementById("password-1").value;
+        var key0="";
+        len=b.length;
+        while (key0.length<(b.length)){
+            key0+=key;
+        }
+        key=key0;
+        key0="";
+        for (var i = 0; i < (b.length); i++) {
+            key0+=key[i];
+        }
+        key=(BigInt(key)+BigInt(b)).toString();
+        if (key.length>len) {
+            b="0"+toBase(BigInt(key));
+        } else {
+            b=toBase(BigInt(key));
+        }
+        if (u.startTime==true) {
+            if (u.endTime==true) {
+                m2=3;
+                t=st+et;
+            } else {
+                m2=1;
+                t=st;
+            }
+        } else{
+            if (u.endTime==true) {
+                m2=2;
+                t=t2;
+            } else {
+                m2=4;
+                t="";
+            }
+        }
     } else {
-        
+        if (u.startTime==true) {
+            if (u.endTime==true) {
+                m2=7;
+                t=st+et;
+            } else {
+                m2=5;
+                t=st;
+            }
+        } else{
+            if (u.endTime==true) {
+                m2=6;
+                t=et;
+            } else {
+                m2=8;
+                t="";
+            }
+        }
     }
-	b=toBase(BigInt(b));
-
-	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${b}`;
+    if (u.blank==true) {
+        if (u.auto==true) {
+            m1=1;
+        } else {
+            m1=2;
+        }
+    }else{
+        if (u.auto==true) {
+            m1=3;
+        } else {
+            m1=4;
+        }
+    }
+    m=toBase(BigInt(m1.toString()+m2.toString()));
+    b=toBase(BigInt(b));
+	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${verify1}${"1"}${m}${t}${b}`;
 	document.getElementById("qr1").innerHTML="";
-	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?${b}`);
-    */
+	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?${verify1}${"1"}${m}${t}${b}`);
 }
 function text(a){
+    if (a==""||a==undefined||a==null) {
+        a=document.getElementById("textarea2").value;
+    }
     ch();
-    console.log("text","color:red");
+    if (a.length==0) {
+        return;
+    }
 }
 
 const base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@$^&*()-=_+[]{}|;:,./?';

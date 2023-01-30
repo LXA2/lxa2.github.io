@@ -24,11 +24,31 @@ if (s0!="") {
 				// error("^^^^^^^^^");
 				break;
 			}
-			console.log(`method:${method}`);
+			// console.log(`method:${method}`);
 			method1=Number(method.toString().charAt(0));
 			if (method1==1||method1==2||method1==5){
+				if (location.hostname!="lxa2.github.io") {
+					if (edit!=="true") {
+						window.location.replace("https://lxa2.github.io/404");
+					}
+				}
+				if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
+					if (edit!=="true") {
+						window.location.replace("https://lxa2.github.io/404");
+					}
+				}
 				show3();
 			} else if(method1==3||method1==4||method1==6){
+				if (location.hostname!="lxa2.github.io") {
+					if (edit!=="true") {
+						window.location.replace("https://lxa2.github.io/404");
+					}
+				}
+				if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
+					if (edit!=="true") {
+						window.location.replace("https://lxa2.github.io/404");
+					}
+				}
 				show2();
 			} else{
 				error("method1");
@@ -109,19 +129,17 @@ if (s0!="") {
 					error("method");
 					break;
 			}
-			console.log(`-----------s:"${s}"`);
 			if (s[0]="0"){
 				zero=1;
 			}
 			s=to10(s.toString());
-			if (method3==1){
+			if (method3==1){//展示密码框，解密由密码框input触发//秘钥
 				document.getElementById("inputKey").style.display="block";
 			} else if (method3==2){//无密钥，直接解析
-				debugger;
+				// debugger;
 				zero=0;
 				if ((s.toString.length%5)!=0){
 					zero=5-s.toString.length%5;
-					console.log(22222222222222222222222222222)
 				}
 				console.log(`zero:${zero}`)
 				while (zero>0){
@@ -133,10 +151,10 @@ if (s0!="") {
 				}
 				console.log(content);
 				if (method1==1||method1==3) {
-					debugger;
+					// debugger;
 					window.location.replace(content);
 				} else if(method1==2||method1==4){
-					document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;">点击跳转</a>`;
+					document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;font-size:3em;">点击跳转</a>`;
 				}else {
 					if(method1==5||method1==6){
 						document.getElementById("p").innerHTML=content;
@@ -147,6 +165,7 @@ if (s0!="") {
 			} else {
 				error("method3");
 			}
+			
 			
 			
 			break;
@@ -175,7 +194,17 @@ if (s0!="") {
 			break;
 	}
 } else{
+	if (location.hostname!="lxa2.github.io") {
+		if (edit!=="true") {
+			window.location.replace("https://lxa2.github.io/404");
+		}
+	}
+	if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
+		if (edit!=="true") {
+			window.location.replace("https://lxa2.github.io/404");
+		}
+	}
 	show1();
 }
 
-setInterval(function(){if(javascript!==edit){window.location.replace("https://lxa2.github.io/fuckyoufuckyoufuckyou");};},500);
+setInterval(function(){if(javascript!==edit){window.location.replace("https://lxa2.github.io/404");};},500);
