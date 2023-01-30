@@ -261,11 +261,16 @@ function ch(){
 	}
 }
 function verify(base87){
-	var a=(BigInt(to10(base87.toString()))*2n),b=0n,c="";
+	var a=(BigInt(to10(base87.toString()))*2n),b=0n,c;
 	for (let i = 0; i < a.length; i++) {
 		b+=BigInt(a[i]);
-		
 	}
+	c=0n;
+	for (let i = 0; i < b.length; i++) {
+		c+=BigInt(a[i]);
+	}
+	b=c.toString();
+	c="";
 	while (b.length<10) {
 		b+=b;
 	}
