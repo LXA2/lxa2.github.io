@@ -146,4 +146,17 @@ function decrypt(a){
 		}
 	}
 }
+function ch(){
+	u.blank=document.getElementById("blankpage").checked;
+	u.auto=document.getElementById("auto").checked;
+	u.startTime=document.getElementById("starttime").checked;
+	u.endTime=document.getElementById("endtime").checked;
+	u.key=document.getElementById("password").checked;
+	t.blank=document.getElementById("blankpage2").checked;
+	t.startTime=document.getElementById("starttime2").checked;
+	t.endTime=document.getElementById("endtime2").checked;
+	t.key=document.getElementById("password2").checked;
+	
+}
+
 	
