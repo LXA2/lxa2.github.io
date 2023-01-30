@@ -3,6 +3,7 @@ let u=Object();
 let t=Object();
 u.blank="";u.auto="";u.startTime="";u.endTime="";u.key="";u.t1=Object();u.t2=Object();
 t.blank="";t.startTime="";t.endTime="";t.key="";t.t1=Object();t.t2=Object();
+
 // u.startTime=Object();u.endTime=Object();u.key=Object();
 // u.startTime.year="";u.startTime.month="";u.startTime.year=""
 function copy1(){
