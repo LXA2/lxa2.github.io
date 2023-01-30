@@ -1,8 +1,8 @@
 console.log("1.js");
 let u=new Object();
 let t=new Object();
-u.blank="";u.auto="";u.startTime="";u.endTime="";u.key="";u.t1=new Object();u.t2=new Object();
-t.blank="";t.startTime="";t.endTime="";t.key="";t.t1=new Object();t.t2=new Object();
+var u.blank="",u.auto="",u.startTime="",u.endTime="",u.key="",u.t1=new Object(),u.t2=new Object(),
+t.blank="",t.startTime="",t.endTime="",t.key="",t.t1=new Object(),t.t2=new Object();
 
 // u.startTime=Object();u.endTime=Object();u.key=Object();
 // u.startTime.year="";u.startTime.month="";u.startTime.year=""
