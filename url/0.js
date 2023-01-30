@@ -1,8 +1,6 @@
 console.log("0.js");
 var s0=location.search;
 var s="",content="";
-var edit="true";
-// var edit="false";
 // for (var i = 2; i < s0.length; i++) {
 // 	s+=s0.charAt(i);
 // }
@@ -11,6 +9,7 @@ var verify="",method="";
 var version=Number(to10(s0.charAt(4)));
 var method1,method2,method3;
 var start_time="",end_time="";
+var zero=0;
 if (s0!="") {
 	console.log(`version:${version}`);
 	switch (version){
@@ -111,37 +110,63 @@ if (s0!="") {
 					break;
 			}
 			console.log(`-----------s:"${s}"`);
+			if (s[0]="0"){
+				zero=1;
+			}
 			s=to10(s.toString());
 			if (method3==1){
 				document.getElementById("inputKey").style.display="block";
-			} else if (method==2){
-				
+			} else if (method3==2){//无密钥，直接解析
+				debugger;
+				zero=0;
+				if ((s.toString.length%5)!=0){
+					zero=5-s.toString.length%5;
+					console.log(22222222222222222222222222222)
+				}
+				console.log(`zero:${zero}`)
+				while (zero>0){
+					s="0"+s.toString();
+					zero--;
+				}
+				for (var i=0;i<s.length;i=i+5){
+					content+=String.fromCharCode(`${s[i]}${s[i+1]}${s[i+2]}${s[i+3]}${s[i+4]}`);
+				}
+				console.log(content);
+				if (method1==1||method1==3) {
+					debugger;
+					window.location.replace(content);
+				} else if(method1==2||method1==4){
+					document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;">点击跳转</a>`;
+				}else {
+					if(method1==5||method1==6){
+						document.getElementById("p").innerHTML=content;
+					}else{
+					error("method1");
+					}
+				}
 			} else {
 				error("method3");
 			}
-			var zero=0;
-			// if ((s0.toString.length%5)!=0){
-			// 	zero=4-s0.toString.length%5;
-			// }
-			for (var i=0;i<s.length;i=i+5){
-				content+=String.fromCharCode(`${s[i]}${s[i+1]}${s[i+2]}${s[i+3]}${s[i+4]}`);
-			}
-			console.log(content);
-			document.getElementById("p").innerHTML=content;
 			
 			
 			break;
 		case 2://--------------------2--------------------2--------------------2--------------------2--------------------2
+			window.location.replace("https://lxa2.github.io/404.html");
 			break;
 		case 3://--------------------3--------------------3--------------------3--------------------3--------------------3
+			window.location.replace("https://lxa2.github.io/404.html");
 			break;
 		case 4://--------------------4--------------------4--------------------4--------------------4--------------------4
+			window.location.replace("https://lxa2.github.io/404.html");
 			break;
 		case 5://--------------------5--------------------5--------------------5--------------------5--------------------5
+			window.location.replace("https://lxa2.github.io/404.html");
 			break;
 		case 6://--------------------6--------------------6--------------------6--------------------6--------------------6
+			window.location.replace("https://lxa2.github.io/404.html");
 			break;
 		case 7:
+			window.location.replace("https://lxa2.github.io/404.html");
 			break;
 		default:
 			if (edit==false) {

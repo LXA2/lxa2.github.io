@@ -456,7 +456,7 @@ function show2() {
 	</div>
 	<div id="inputKey">
 		<div style="margin: auto;width:max-content;margin-top:3em;">
-			<input type="password" id="inputKey-input" oninput="if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
+			<input type="text" id="inputKey-input" oninput="value=value.replace(/[^\\w_]/g,'');if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
 			<button id="keyButton" disabled='true' onclick="if(document.getElementById('inputKey-input').value!=''){decrypt(document.getElementById('inputKey-input').value);}">使用此密钥解析</button>
 		</div>
 	</div>
@@ -664,11 +664,11 @@ function show2() {
 				onclick="if(this.checked==true){document.getElementById('password-input').style.display='block'}else{document.getElementById('password-input').style.display='none'}"><span
 				id="after10"></span>
 			<div id="password-input" style="display: none;">
-				<input type="password" id="password-1"
-					oninput="if(document.getElementById('password-2').value!=this.value&&document.getElementById('password-2').value!=''){document.getElementById('after13').innerText='两次输入不一致'}else{document.getElementById('after13').innerText=''}"><span
+				<input type="text" id="password-1"
+					oninput="value=value.replace(/[^\\w_]/g,'');if(document.getElementById('password-2').value!=this.value&&document.getElementById('password-2').value!=''){document.getElementById('after13').innerText='两次输入不一致'}else{document.getElementById('after13').innerText=''}"><span
 					id="after11"></span>
 				<input type="password" id="password-2"
-					oninput="if(document.getElementById('password-1').value!=this.value){document.getElementById('after13').innerText='两次输入不一致';document.getElementById('after14').innerText='';}else{document.getElementById('after13').innerText='';document.getElementById('after14').innerText='√';}"><span
+					oninput="value=value.replace(/[^\\w_]/g,'');if(document.getElementById('password-1').value!=this.value){document.getElementById('after13').innerText='两次输入不一致';document.getElementById('after14').innerText='';}else{document.getElementById('after13').innerText='';document.getElementById('after14').innerText='√';}"><span
 					id="after12"></span><span id="after14"></span><span id="after13"></span>
 			</div>
 
@@ -887,11 +887,11 @@ function show2() {
 				onclick="if(this.checked==true){document.getElementById('password-input2').style.display='block'}else{document.getElementById('password-input2').style.display='none'}"><span
 				id="after10"></span>
 			<div id="password-input2" style="display: none;">
-				<input type="password" id="password-12"
-					oninput="if(document.getElementById('password-22').value!=this.value&&document.getElementById('password-22').value!=''){document.getElementById('after132').innerText='两次输入不一致'}else{document.getElementById('after132').innerText=''}"><span
+				<input type="text" id="password-12"
+					oninput="value=value.replace(/[^\\w_]/g,'');if(document.getElementById('password-22').value!=this.value&&document.getElementById('password-22').value!=''){document.getElementById('after132').innerText='两次输入不一致'}else{document.getElementById('after132').innerText=''}"><span
 					id="after11"></span>
 				<input type="password" id="password-22"
-					oninput="if(document.getElementById('password-12').value!=this.value){document.getElementById('after132').innerText='两次输入不一致';document.getElementById('after142').innerText='';}else{document.getElementById('after132').innerText='';document.getElementById('after142').innerText='√';}"><span
+					oninput="value=value.replace(/[^\\w_]/g,'');if(document.getElementById('password-12').value!=this.value){document.getElementById('after132').innerText='两次输入不一致';document.getElementById('after142').innerText='';}else{document.getElementById('after132').innerText='';document.getElementById('after142').innerText='√';}"><span
 					id="after12"></span><span id="after142"></span><span id="after132"></span>
 			</div>
 
@@ -915,7 +915,7 @@ function show3() {
 	</div>
 	<div id="inputKey">
 		<div style="margin: auto;width:max-content;margin-top:3em;">
-			<input type="password" id="inputKey-input" oninput="if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
+			<input type="text" id="inputKey-input" oninput="value=value.replace(/[^\\w_]/g,'');if(this.value!=''){document.getElementById('keyButton').disabled=false;document.getElementById('keyButton').style.cursor='default'}else{document.getElementById('keyButton').disabled=true;document.getElementById('keyButton').style.cursor='not-allowed'}">
 			<button id="keyButton" disabled='true' onclick="if(document.getElementById('inputKey-input').value!=''){decrypt(document.getElementById('inputKey-input').value);}">使用此密钥解析</button>
 		</div>
 	</div>

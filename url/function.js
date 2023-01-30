@@ -1,4 +1,6 @@
 console.log("function.js");
+var edit="true";
+// var edit="false";
 function error(error){
 	console.log(`error:[${error}]`);
     if (edit=="false") {
@@ -111,5 +113,37 @@ if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
 	}
 }
 function decrypt(a){
-	
+	var key="",key0="";
+	while (key.length<(s.length-zero)){
+		key+=a;
+	}
+	for (var i = 0; i < (s.length-zero); i++) {
+		key0+=key[i];
+	}
+	key=key0;
+	s=s-to10(key.toString());//--------------------------------------------------------
+	if ((s.toString.length%5)!=0){
+		zero=5-s.toString.length%5;
+	}
+	while (zero>0){
+		s="0"+s.toString();
+		zero--;
+	}
+	for (var i=0;i<s.length;i=i+5){
+		content+=String.fromCharCode(`${s[i]}${s[i+1]}${s[i+2]}${s[i+3]}${s[i+4]}`);
+	}
+	console.log(content);
+	if (method1==1||method1==3) {
+		debugger;
+		window.location.replace(content);
+	} else if(method1==2||method1==4){
+		document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;">点击跳转</a>`;
+	}else {
+		if(method1==5||method1==6){
+			document.getElementById("p").innerHTML=content;
+		}else{
+		error("method1");
+		}
+	}
 }
+	
