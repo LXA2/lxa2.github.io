@@ -115,9 +115,9 @@ function url(a){
     }
     m=toBase(BigInt(m1.toString()+m2.toString()));
     b=toBase(BigInt(b));
-	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?aaa${"1"}${m}${t}${b}`;//${verify1}${"1"}${m}${t}${b}`;
+	document.getElementById("res1").value=`https://lxa2.github.io/url/index.html?${verify1}${"1"}${m}${t}${b}`;
 	document.getElementById("qr1").innerHTML="";
-	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?aaa${"1"}${m}${t}${b}`);//${verify1}${"1"}${m}${t}${b}`);
+	new QRCode(document.getElementById("qr1"),`https://lxa2.github.io/url/index.html?${verify1}${"1"}${m}${t}${b}`);
 }
 function text(a){
     if (a==""||a==undefined||a==null) {
