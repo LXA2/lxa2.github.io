@@ -155,7 +155,11 @@ if (s0!="") {
 				console.log(content);
 				if (method1==1||method1==3) {
 					// debugger;
-					window.location.replace(content);
+					try {
+						window.location.replace(content);
+					} catch (err) {
+						window.open(content);
+					}
 				} else if(method1==2||method1==4){
 					document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;font-size:3em;">点击跳转</a>`;
 				}else {
