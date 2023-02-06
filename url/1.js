@@ -45,6 +45,7 @@ function url(a){
 		}
     	b=b+c;
     }//转为unicode（str）
+    console.log("b:"+b);
     if (edit==true) {
 		console.log(`b:${b}/b.length:${b.length}`);
 	}
@@ -87,6 +88,7 @@ function url(a){
             }
         }
     } else {
+        b=toBase(BigInt(b));
         if (u.startTime==true) {
             if (u.endTime==true) {
                 m2=7;

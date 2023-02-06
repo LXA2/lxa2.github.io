@@ -123,7 +123,9 @@ if (s0!="") {
 					}
 					break;
 				case 4://没有时间限制
-					
+				for (var i = 6; i < s0.length; i++) {
+					s+=s0.charAt(i);
+				}
 					break;
 				default:
 					error("method");
@@ -139,8 +141,8 @@ if (s0!="") {
 			} else if (method3==2){//无密钥，直接解析
 				// debugger;
 				zero=0;
-				if ((s.toString.length%5)!=0){
-					zero=5-s.toString.length%5;
+				if ((s.toString().length%5)!=0){
+					zero=5-s.toString().length%5;
 				}
 				console.log(`zero:${zero}`)
 				while (zero>0){
