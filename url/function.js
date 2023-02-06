@@ -167,25 +167,25 @@ function ch(){
 	u.t2.second=document.getElementById("esecond").value;
 
 	u.key=document.getElementById("password").checked;
-	t.blank=document.getElementById("blankpage2").checked;
+	ttt.blank=document.getElementById("blankpage2").checked;
 
-	t.startTime=document.getElementById("starttime2").checked;
-	t.t1.year=document.getElementById("year").value;
-	t.t1.month=document.getElementById("month").value;
-	t.t1.date=document.getElementById("date").value;
-	t.t1.hour=document.getElementById("hour").value;
-	t.t1.minute=document.getElementById("minute").value;
-	t.t1.second=document.getElementById("second").value;
+	ttt.startTime=document.getElementById("starttime2").checked;
+	ttt.t1.year=document.getElementById("year").value;
+	ttt.t1.month=document.getElementById("month").value;
+	ttt.t1.date=document.getElementById("date").value;
+	ttt.t1.hour=document.getElementById("hour").value;
+	ttt.t1.minute=document.getElementById("minute").value;
+	ttt.t1.second=document.getElementById("second").value;
 
-	t.endTime=document.getElementById("endtime2").checked;
-	t.t2.year=document.getElementById("eyear2").value;
-	t.t2.month=document.getElementById("emonth2").value;
-	t.t2.date=document.getElementById("edate2").value;
-	t.t2.hour=document.getElementById("ehour2").value;
-	t.t2.minute=document.getElementById("eminute2").value;
-	t.t2.second=document.getElementById("esecond2").value;
+	ttt.endTime=document.getElementById("endtime2").checked;
+	ttt.t2.year=document.getElementById("eyear2").value;
+	ttt.t2.month=document.getElementById("emonth2").value;
+	ttt.t2.date=document.getElementById("edate2").value;
+	ttt.t2.hour=document.getElementById("ehour2").value;
+	ttt.t2.minute=document.getElementById("eminute2").value;
+	ttt.t2.second=document.getElementById("esecond2").value;
 
-	t.key=document.getElementById("password2").checked;
+	ttt.key=document.getElementById("password2").checked;
 	while (u.t1.year.length<4) {
 		u.t1.year="0"+u.t1.year;
 	}
@@ -223,41 +223,41 @@ function ch(){
 		u.t2.second="0"+u.t2.second;
 	}
 
-	while (t.t1.year.length<4) {
-		t.t1.year="0"+t.t1.year;
+	while (ttt.t1.year.length<4) {
+		ttt.t1.year="0"+ttt.t1.year;
 	}
-	while (t.t1.month.length<2) {
-		t.t1.month="0"+t.t1.month;
+	while (ttt.t1.month.length<2) {
+		ttt.t1.month="0"+ttt.t1.month;
 	}
-	while (t.t1.date.length<2) {
-		t.t1.date="0"+t.t1.date;
+	while (ttt.t1.date.length<2) {
+		ttt.t1.date="0"+ttt.t1.date;
 	}
-	while (t.t1.hour.length<2) {
-		t.t1.hour="0"+t.t1.hour;
+	while (ttt.t1.hour.length<2) {
+		ttt.t1.hour="0"+ttt.t1.hour;
 	}
-	while (t.t1.minute.length<2) {
-		t.t1.minute="0"+t.t1.minute;
+	while (ttt.t1.minute.length<2) {
+		ttt.t1.minute="0"+ttt.t1.minute;
 	}
-	while (t.t1.second.length<2) {
-		t.t1.second="0"+t.t1.second;
+	while (ttt.t1.second.length<2) {
+		ttt.t1.second="0"+ttt.t1.second;
 	}
-	while (t.t2.year.length<4) {
-		t.t2.year="0"+t.t2.year;
+	while (ttt.t2.year.length<4) {
+		ttt.t2.year="0"+ttt.t2.year;
 	}
-	while (t.t2.month.length<2) {
-		t.t2.month="0"+t.t2.month;
+	while (ttt.t2.month.length<2) {
+		ttt.t2.month="0"+ttt.t2.month;
 	}
-	while (t.t2.date.length<2) {
-		t.t2.date="0"+t.t2.date;
+	while (ttt.t2.date.length<2) {
+		ttt.t2.date="0"+ttt.t2.date;
 	}
-	while (t.t2.hour.length<2) {
-		t.t2.hour="0"+t.t2.hour;
+	while (ttt.t2.hour.length<2) {
+		ttt.t2.hour="0"+ttt.t2.hour;
 	}
-	while (t.t2.minute.length<2) {
-		t.t2.minute="0"+t.t2.minute;
+	while (ttt.t2.minute.length<2) {
+		ttt.t2.minute="0"+ttt.t2.minute;
 	}
-	while (t.t2.second.length<2) {
-		t.t2.second="0"+t.t2.second;
+	while (ttt.t2.second.length<2) {
+		ttt.t2.second="0"+ttt.t2.second;
 	}
 }
 function verify(base87){

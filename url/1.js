@@ -1,15 +1,13 @@
 console.log("1.js");
 let u=Object();
+let ttt=Object();
 if (true==true) {
 }
 u.blank="";u.auto="";u.startTime="";u.endTime="";u.key="";u.t1=Object();u.t2=Object();
 if (true==true) {
 }
-let t=Object();
-if (true==true) {
-}
 u.blank="";u.auto="";u.startTime="";u.endTime="";u.key="";u.t1=Object();u.t2=Object();
-t.blank="";t.startTime="";t.endTime="";t.key="";t.t1=Object();t.t2=Object();
+ttt.blank="";ttt.startTime="";ttt.endTime="";ttt.key="";ttt.t1=Object();ttt.t2=Object();
 
 // u.startTime=Object();u.endTime=Object();u.key=Object();
 // u.startTime.year="";u.startTime.month="";u.startTime.year=""
