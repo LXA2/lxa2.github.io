@@ -3,7 +3,7 @@ var a0;
 a0=a;
 let aaa=Object();
 aaa.a="1";
-console.log(aaa.a);
+console.log(aaa());
 function b(){
 	if (a!=a0) {
 		alert("aaa");

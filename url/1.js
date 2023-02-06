@@ -54,7 +54,9 @@ function url(a){
             return;
         }
         key=document.getElementById("password-1").value;
+        key=to10(key);
         var key0="";
+        b=to10(b.toString());//key&b:base10
         len=b.length;
         while (key0.length<(b.length)){//输入的key增加长度     key,key0:string
             key0+=key;
@@ -64,7 +66,8 @@ function url(a){
         for (var i = 0; i < (b.length); i++) {//截取相同长度   key,key0:string
             key0+=key[i];
         }
-        key=(BigInt(to10(key0))+BigInt(to10(b))).toString();//key,key0:str
+        key=(BigInt(key0)+BigInt(b)).toString();//key,key0:str
+        alert(`${key0.length}/${b.length}/${key.length}`)
         if (key.length>len) {
             b="0"+toBase(BigInt(key));
         } else {

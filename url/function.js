@@ -113,7 +113,8 @@ if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
 	}
 }
 function decrypt(a){
-	console.log(a);
+	console.log("a:"+a);
+	s=to10(s);
 	var key="",key0="";
 	while (key.length<(s.length-zero)){//zero为内容（base87）的第一位0的个数
 		key+=a;
@@ -121,10 +122,13 @@ function decrypt(a){
 	for (var i = 0; i < (s.length-zero); i++) {
 		key0+=key[i];
 	}
-	key=key0;//把输入的key制成与内容等长
-	s=s-to10(key.toString());//--------------------------------------------------------
-	if ((s.toString.length%5)!=0){
-		zero=5-s.toString.length%5;
+	key=to10(key0);
+	// key=key0;//把输入的key制成与内容等长
+	console.log("key:"+key);
+	s=(BigInt(s)-BigInt(key)).toString();//--------------------------------------------------------
+	console.log("s:"+s)
+	if ((s.toString().length%5)!=0){
+		zero=5-s.toString().length%5;
 	}
 	while (zero>0){
 		s="0"+s.toString();
