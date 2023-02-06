@@ -132,6 +132,7 @@ if (s0!="") {
 			if (s[0]="0"){
 				zero=1;
 			}
+			console.log(s);
 			s=to10(s.toString());
 			if (method3==1){//展示密码框，解密由密码框input触发//秘钥
 				document.getElementById("inputKey").style.display="block";
