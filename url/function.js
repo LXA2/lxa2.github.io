@@ -260,7 +260,6 @@ function ch(){
 		t.t2.second="0"+t.t2.second;
 	}
 }
-/*
 function verify(base87){
 	var a=(BigInt(to10(base87.toString()))*2n),b=0n,c;
 	for (let i = 0; i < a.length; i++) {
@@ -281,4 +280,4 @@ function verify(base87){
 	console.log(`b:${b};c:${c}`);
 	return c;
 }
-	*/
+	
