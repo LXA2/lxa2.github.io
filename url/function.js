@@ -113,6 +113,7 @@ if (location.href[0]=="f"||location.href[0]=="l"||location.href[0]=="1") {
 	}
 }
 function decrypt(a){
+	console.log(a);
 	var key="",key0="";
 	while (key.length<(s.length-zero)){//zero为内容（base87）的第一位0的个数
 		key+=a;
