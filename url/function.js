@@ -136,9 +136,17 @@ function decrypt(a){
 	if (method1==1||method1==3) {
 		// debugger;
 		try {
-			window.open(content);
+			if (content[0]=="h"&&content[1]=="t"&&content[2]=="t"&&content[3]=="p"&&content[4]==":"&&content[5]=="/"&&content[6]=="/") {
+				window.location.replace(content);
+			} else {
+				if (content[0]=="h"&&content[1]=="t"&&content[2]=="t"&&content[3]=="p"&&content[4]=="s"&&content[5]==":"&&content[6]=="/"&&content[7]=="/") {
+					window.location.replace(content);
+				} else {
+					window.location.replace(`https://${content}`);
+				}
+			}
 		} catch (err) {
-			window.location.replace(content);
+			window.open(content);
 		}
 	} else if(method1==2||method1==4){
 		document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;font-size:3em;">点击跳转</a>`;
