@@ -55,15 +55,15 @@ function url(a){
         key=document.getElementById("password-1").value;
         var key0="";
         len=b.length;
-        while (key0.length<(b.length)){
+        while (key0.length<(b.length)){//输入的key增加长度     key,key0:string
             key0+=key;
         }
         key=key0;
         key0="";
-        for (var i = 0; i < (b.length); i++) {
+        for (var i = 0; i < (b.length); i++) {//截取相同长度   key,key0:string
             key0+=key[i];
         }
-        key=(BigInt(key)+BigInt(b)).toString();
+        key=(BigInt(to10(key0))+BigInt(to10(b))).toString();//key,key0:str
         if (key.length>len) {
             b="0"+toBase(BigInt(key));
         } else {
