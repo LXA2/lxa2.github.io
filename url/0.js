@@ -169,7 +169,7 @@ if (s0!="") {
 						window.open(content);
 					}
 				} else if(method1==2||method1==4){
-					document.getElementById("p").innerHTML=`<a href="${content}" style="text-align:center;font-size:3em;">点击跳转</a>`;
+					document.getElementById("p").innerHTML=`<div>${content}</div><a href="${content}" style="text-align:center;font-size:3em;">点击跳转</a>`;
 				}else {
 					if(method1==5||method1==6){
 						document.getElementById("p").innerHTML=content;
