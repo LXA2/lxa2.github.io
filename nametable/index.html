@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editable Table</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .top-bar {
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .table-container {
+      width: 95%;
+      margin: 20px auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background-color: #2196F3;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <button class="btn" id="left-btn">向左</button>
+    <button class="btn" id="right-btn">向右</button>
+    <button class="btn edit-btn" id="edit-btn">编辑</button>
+  </div>
+
+  <div class="table-container">
+    <table id="table">
+      <tbody>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+          <td><input type="text" readonly></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // 从localStorage中获取表格数据，如果没有则使用默认数据
+    const tableData = JSON.parse(localStorage.getItem('tableData')) || [
+      ['', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', ''],
+      ['', '', '', '', '', '', '']
+    ];
+
+    const table = document.getElementById('table');
+    const editBtn = document.getElementById('edit-btn');
+    const leftBtn = document.getElementById('left-btn');
+    const rightBtn = document.getElementById('right-btn');
+
+    // 初始化表格数据
+    for (let i = 0; i < table.rows.length; i++) {
+      for (let j = 0; j < table.rows[i].cells.length; j++) {
+        table.rows[i].cells[j].getElementsByTagName('input')[0].value = tableData[i][j];
+      }
+    }
+
+    // 标记当前是否处于编辑模式
+    let isEditing = false;
+
+    // 编辑按钮点击事件
+    editBtn.addEventListener('click', () => {
+      isEditing = !isEditing;
+      editBtn.textContent = isEditing ? '保存' : '编辑';
+
+      for (let i = 0; i < table.rows.length; i++) {
+        for (let j = 0; j < table.rows[i].cells.length; j++) {
+          const input = table.rows[i].cells[j].getElementsByTagName('input')[0];
+          input.readOnly = !isEditing;
+
+          if (!isEditing) {
+            // 保存编辑后的数据到localStorage
+            tableData[i][j] = input.value;
+            localStorage.setItem('tableData', JSON.stringify(tableData));
+          }
+        }
+      }
+    });
+
+    // 向左按钮点击事件
+    leftBtn.addEventListener('click', () => {
+      const lastColData = [];
+
+      for (let i = 0; i < table.rows.length; i++) {
+        const lastColInput = table.rows[i].cells[table.rows[i].cells.length - 1].getElementsByTagName('input')[0];
+        lastColData.push(lastColInput.value);
+
+        for (let j = table.rows[i].cells.length - 1; j >= 1; j--) {
+          const input = table.rows[i].cells[j].getElementsByTagName('input')[0];
+          const prevInput = table.rows[i].cells[j - 1].getElementsByTagName('input')[0];
+          input.value = prevInput.value;
+        }
+      }
+
+      for (let i = 0; i < table.rows.length; i++) {
+        const firstColInput = table.rows[i].cells[0].getElementsByTagName('input')[0];
+        firstColInput.value = lastColData[i];
+      }
+
+      // 保存移动后的数据到localStorage
+      tableData.forEach((row) => {
+        row.unshift(row.pop());
+      });
+      localStorage.setItem('tableData', JSON.stringify(tableData));
+    });
+
+    // 向右按钮点击事件
+    rightBtn.addEventListener('click', () => {
+      const firstColData = [];
+
+      for (let i = 0; i < table.rows.length; i++) {
+        const firstColInput = table.rows[i].cells[0].getElementsByTagName('input')[0];
+        firstColData.push(firstColInput.value);
+
+        for (let j = 0; j < table.rows[i].cells.length - 1; j++) {
+          const input = table.rows[i].cells[j].getElementsByTagName('input')[0];
+          const nextInput = table.rows[i].cells[j + 1].getElementsByTagName('input')[0];
+          input.value = nextInput.value;
+        }
+      }
+
+      for (let i = 0; i < table.rows.length; i++) {
+        const lastColInput = table.rows[i].cells[table.rows[i].cells.length - 1].getElementsByTagName('input')[0];
+        lastColInput.value = firstColData[i];
+      }
+
+      // 保存移动后的数据到localStorage
+      tableData.forEach((row) => {
+        row.push(row.shift());
+      });
+      localStorage.setItem('tableData', JSON.stringify(tableData));
+    });
+  </script>
+</body>
+</html>
