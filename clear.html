@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear localStorage</title>
+    <style>
+        .a{
+            font-size: 2em;
+            margin-left: 10px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button class="a" onclick="alert(`即将清除Local Storage\n目前的LS为:\n${localStorage}`);localStorage.clear();alert(`清除成功\n目前的LS为:\n${localStorage}`);">清除 Local Storage</button>
+</body>
+</html>
