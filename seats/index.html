@@ -172,6 +172,13 @@
         document.getElementById("t6").value=a2;
         document.getElementById("t7").value=a6;
       }
+      localStorage.setItem("row1_1",document.getElementById("t1").value);
+      localStorage.setItem("row1_2",document.getElementById("t2").value);
+      localStorage.setItem("row1_3",document.getElementById("t3").value);
+      localStorage.setItem("row1_4",document.getElementById("t4").value);
+      localStorage.setItem("row1_5",document.getElementById("t5").value);
+      localStorage.setItem("row1_6",document.getElementById("t6").value);
+      localStorage.setItem("row1_7",document.getElementById("t7").value);
     }
     if (localStorage.hasOwnProperty('row1_1')) {
       document.getElementById("t1").value=localStorage.getItem("row1_1");
@@ -257,7 +264,7 @@
         const lastColInput = table.rows[i].cells[table.rows[i].cells.length - 1].getElementsByTagName('input')[0];
         lastColData.push(lastColInput.value);
 
-        for (let j = table.rows[i].cells.length - 1; j >= 1; j--) {
+        for (let j = table.rows[i].cells.length - 1; j >= 1; j--) {//移动每一列，第三列不动
           if (j==4) {
             const input = table.rows[i].cells[j].getElementsByTagName('input')[0];
             const prevInput = table.rows[i].cells[j - 2].getElementsByTagName('input')[0];
@@ -272,19 +279,39 @@
         }
       }
 
-      for (let i = 0; i < table.rows.length; i++) {
+      for (let i = 0; i < table.rows.length; i++) {//末端一列的移动孔皓霖牛逼
         const firstColInput = table.rows[i].cells[0].getElementsByTagName('input')[0];
         firstColInput.value = lastColData[i];
       }
 
       // 保存移动后的数据到localStorage
-      tableData.forEach((row) => {
-        row.unshift(row.pop());
-      });
+      //tableData.forEach((row) => {//pop:移除//unshift:添加到数组最前//for each:列出每一个元素
+      //  row.unshift(row.pop());
+      //});
+
+      // for (let i = 0; i < table.rows.length; i++) {
+      //   tableData[i][0] = table.rows[i].cells[6].getElementsByTagName('input')[0].value;
+      //   for (let j = 0; j < table.rows[i].cells.length - 1; j++) {
+      //     if (j==4) {
+      //       tableData[i][j] = table.rows[i].cells[j - 2].getElementsByTagName('input')[0].value;
+      //     } else {
+      //       if (j!=3) {
+      //         tableData[i][j] = table.rows[i].cells[j - 1].getElementsByTagName('input')[0].value;
+      //       }
+      //     }
+      //   }
+      // }
+      for (let i = 0; i < table.rows.length; i++) {
+        //tableData[i][0] = table.rows[i].cells[6].getElementsByTagName('input')[0].value;
+        for (let j = 0; j <= table.rows[i].cells.length - 1; j++) {
+          tableData[i][j] = table.rows[i].cells[j].getElementsByTagName('input')[0].value;
+        }
+      }
+
       localStorage.setItem('tableData', JSON.stringify(tableData));
     });
 
-    // 向右按钮点击事件
+    // 向右按钮点击事件,其实是向左cnmb的反了都快搞不清了khlnb
     rightBtn.addEventListener('click', () => {
       const firstColData = [];
       row1("left");
@@ -313,9 +340,19 @@
       }
 
       // 保存移动后的数据到localStorage
-      tableData.forEach((row) => {
-        row.push(row.shift());
-      });
+      // tableData.forEach((row) => {
+      //   row.push(row.shift());
+      // });
+      for (let i = 0; i < table.rows.length; i++) {
+        //tableData[i][6] = table.rows[i].cells[0].getElementsByTagName('input')[0].value;
+        for (let j = 0; j <= table.rows[i].cells.length - 1; j++) {
+            tableData[i][j] = table.rows[i].cells[j].getElementsByTagName('input')[0].value;
+        } 
+      }
+
+
+
+      console.log(JSON.stringify(tableData));
       localStorage.setItem('tableData', JSON.stringify(tableData));
     });
   </script>
