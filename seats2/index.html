@@ -62,10 +62,6 @@
     .edit-btn {
       background-color: #2196F3;
     }
-
-    .aaa{
-      margin-right: 5%;
-    }
   </style>
 </head>
 <body>
@@ -73,7 +69,6 @@
     <button class="btn" id="right-btn">向左</button>
     <button class="btn" id="left-btn">向右</button>
     <button class="btn edit-btn" id="edit-btn">编辑</button>
-    <span class="aaa"><button class="btn edit-btn" onclick="localStorage.clear();alert('恢复默认成功');location.reload();">恢复默认</button></span>
   </div>
 
   <div class="table-container">
@@ -160,8 +155,8 @@
   </div>
 
   <script>
-    var pageID="a2_"
     var a1,a2,a6,a7;
+    var pageID="a1";
     function row1(lor) {
       a1=document.getElementById("t1").value;
       a2=document.getElementById("t2").value;
@@ -178,22 +173,38 @@
         document.getElementById("t6").value=a2;
         document.getElementById("t7").value=a6;
       }
-      for (let i = 1; i < 8; i++) {
-        localStorage.setItem(`${pageID}row1_${i}`,document.getElementById(`t${i}`).value);
-      }
+      localStorage.setItem("row1_1",document.getElementById("t1").value);
+      localStorage.setItem("row1_2",document.getElementById("t2").value);
+      localStorage.setItem("row1_3",document.getElementById("t3").value);
+      localStorage.setItem("row1_4",document.getElementById("t4").value);
+      localStorage.setItem("row1_5",document.getElementById("t5").value);
+      localStorage.setItem("row1_6",document.getElementById("t6").value);
+      localStorage.setItem("row1_7",document.getElementById("t7").value);
     }
-    const firstRowData = ['范如欣','何亦薇','王一齐','张逸晨','赵佳琪','罗豫','林欣然'];
-    if (localStorage.hasOwnProperty(`${pageID}row1_1`)) {
-      for (let i = 1; i < 8; i++) {
-        document.getElementById(`t${i}`).value=localStorage.getItem(`${pageID}row1_${i}`);
-      }
+    if (localStorage.hasOwnProperty('row1_1')) {
+      // for (let i = 1; i < 8; i++) {
+      //   document.getElementById(`t${i}`).value=localStorage.getItem(`row1_${i}`);
+        
+      // }
+      document.getElementById("t1").value=localStorage.getItem("row1_1");
+      document.getElementById("t2").value=localStorage.getItem("row1_2");
+      document.getElementById("t3").value=localStorage.getItem("row1_3");
+      document.getElementById("t4").value=localStorage.getItem("row1_4");
+      document.getElementById("t5").value=localStorage.getItem("row1_5");
+      document.getElementById("t6").value=localStorage.getItem("row1_6");
+      document.getElementById("t7").value=localStorage.getItem("row1_7");
     } else {
-      for (let i = 1; i < 8; i++) {
-        document.getElementById(`t${i}`).value = firstRowData[i - 1];
-      }
+      document.getElementById("t1").value="范如欣";
+      document.getElementById("t2").value="何亦薇";
+      document.getElementById("t3").value="王一齐";
+      document.getElementById("t4").value="张逸晨";
+      document.getElementById("t5").value="赵佳琪";
+      document.getElementById("t6").value="罗豫";
+      document.getElementById("t7").value="林欣然";
     }
     // 从localStorage中获取表格数据，如果没有则使用默认数据
-    const tableData = JSON.parse(localStorage.getItem(`${pageID}tableData`)) || [
+    const tableData = JSON.parse(localStorage.getItem('tableData')) || [
+      //['范如欣', '何亦薇', '王一齐', '张逸晨', '赵佳琪', '罗豫', '林欣然'],
       ['姚梦蝶', '廖怡', '朱郭瑾', '', '王嘉雯', '顾依凡', '王茵茵'],
       ['田馨', '韩佳璇', '徐书瑶', '', '耿飞扬', '付饶', '杨嘉雨'],
       ['金涵蓉', '倪嘉', '袁佳颖', '', '朱佳璐', '许凰倩', '吴钰尧'],
@@ -202,25 +213,33 @@
       ['', '', '李昕翱', '', '刘陆尧', '范沅翰', '杨云帆'],
       ['', '', '', '', '', '', '']
     ];
+
     const table = document.getElementById('table');
     const editBtn = document.getElementById('edit-btn');
     const leftBtn = document.getElementById('left-btn');
     const rightBtn = document.getElementById('right-btn');
+
     // 初始化表格数据
     for (let i = 0; i < table.rows.length; i++) {
       for (let j = 0; j < table.rows[i].cells.length; j++) {
         table.rows[i].cells[j].getElementsByTagName('input')[0].value = tableData[i][j];
       }
     }
+
     // 标记当前是否处于编辑模式
     let isEditing = false;
+
     // 编辑按钮点击事件
     editBtn.addEventListener('click', () => {
       isEditing = !isEditing;
       editBtn.textContent = isEditing ? '保存' : '编辑';
-      for (let i = 1; i < 8; i++) {
-        document.getElementById(`t${i}`).readOnly = !isEditing;
-      }
+      document.getElementById("t1").readOnly = !isEditing;
+      document.getElementById("t2").readOnly = !isEditing;
+      document.getElementById("t3").readOnly = !isEditing;
+      document.getElementById("t4").readOnly = !isEditing;
+      document.getElementById("t5").readOnly = !isEditing;
+      document.getElementById("t6").readOnly = !isEditing;
+      document.getElementById("t7").readOnly = !isEditing;
       for (let i = 0; i < table.rows.length; i++) {
         for (let j = 0; j < table.rows[i].cells.length; j++) {
           const input = table.rows[i].cells[j].getElementsByTagName('input')[0];
@@ -229,15 +248,20 @@
           if (!isEditing) {
             // 保存编辑后的数据到localStorage
             tableData[i][j] = input.value;
-            localStorage.setItem(`${pageID}tableData`, JSON.stringify(tableData));
-            for (let i = 1; i < 8; i++) {
-              localStorage.setItem(`${pageID}row1_${i}`,document.getElementById(`t${i}`).value);
-            }
+            localStorage.setItem('tableData', JSON.stringify(tableData));
+            localStorage.setItem("row1_1",document.getElementById("t1").value);
+            localStorage.setItem("row1_2",document.getElementById("t2").value);
+            localStorage.setItem("row1_3",document.getElementById("t3").value);
+            localStorage.setItem("row1_4",document.getElementById("t4").value);
+            localStorage.setItem("row1_5",document.getElementById("t5").value);
+            localStorage.setItem("row1_6",document.getElementById("t6").value);
+            localStorage.setItem("row1_7",document.getElementById("t7").value);
           }
         }
       }
     });
-    // 向右按钮点击事件
+
+    // 向左按钮点击事件
     leftBtn.addEventListener('click', () => {
       const lastColData = [];
       row1("right");
@@ -259,25 +283,47 @@
           }
         }
       }
+
       for (let i = 0; i < table.rows.length; i++) {//末端一列的移动孔皓霖牛逼
         const firstColInput = table.rows[i].cells[0].getElementsByTagName('input')[0];
         firstColInput.value = lastColData[i];
       }
+
       // 保存移动后的数据到localStorage
+      //tableData.forEach((row) => {//pop:移除//unshift:添加到数组最前//for each:列出每一个元素
+      //  row.unshift(row.pop());
+      //});
+
+      // for (let i = 0; i < table.rows.length; i++) {
+      //   tableData[i][0] = table.rows[i].cells[6].getElementsByTagName('input')[0].value;
+      //   for (let j = 0; j < table.rows[i].cells.length - 1; j++) {
+      //     if (j==4) {
+      //       tableData[i][j] = table.rows[i].cells[j - 2].getElementsByTagName('input')[0].value;
+      //     } else {
+      //       if (j!=3) {
+      //         tableData[i][j] = table.rows[i].cells[j - 1].getElementsByTagName('input')[0].value;
+      //       }
+      //     }
+      //   }
+      // }
       for (let i = 0; i < table.rows.length; i++) {
+        //tableData[i][0] = table.rows[i].cells[6].getElementsByTagName('input')[0].value;
         for (let j = 0; j <= table.rows[i].cells.length - 1; j++) {
           tableData[i][j] = table.rows[i].cells[j].getElementsByTagName('input')[0].value;
         }
       }
-      localStorage.setItem(`${pageID}tableData`, JSON.stringify(tableData));
+
+      localStorage.setItem('tableData', JSON.stringify(tableData));
     });
-    // 向左按钮点击事件
+
+    // 向右按钮点击事件,其实是向左cnmb的反了都快搞不清了khlnb
     rightBtn.addEventListener('click', () => {
       const firstColData = [];
       row1("left");
       for (let i = 0; i < table.rows.length; i++) {
         const firstColInput = table.rows[i].cells[0].getElementsByTagName('input')[0];
         firstColData.push(firstColInput.value);
+
         for (let j = 0; j < table.rows[i].cells.length - 1; j++) {
           if (j==2) {
             const input = table.rows[i].cells[j].getElementsByTagName('input')[0];
@@ -292,18 +338,27 @@
           }
         }
       }
+
       for (let i = 0; i < table.rows.length; i++) {
         const lastColInput = table.rows[i].cells[table.rows[i].cells.length - 1].getElementsByTagName('input')[0];
         lastColInput.value = firstColData[i];
       }
+
       // 保存移动后的数据到localStorage
+      // tableData.forEach((row) => {
+      //   row.push(row.shift());
+      // });
       for (let i = 0; i < table.rows.length; i++) {
+        //tableData[i][6] = table.rows[i].cells[0].getElementsByTagName('input')[0].value;
         for (let j = 0; j <= table.rows[i].cells.length - 1; j++) {
             tableData[i][j] = table.rows[i].cells[j].getElementsByTagName('input')[0].value;
         } 
       }
+
+
+
       console.log(JSON.stringify(tableData));
-      localStorage.setItem(`${pageID}tableData`, JSON.stringify(tableData));
+      localStorage.setItem('tableData', JSON.stringify(tableData));
     });
   </script>
 </body>

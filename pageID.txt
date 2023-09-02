@@ -1,0 +1,4 @@
+                                               ----->  pageID用于区分localStorage的name  <-----
+lxa2.github.io/
+    seats2/index.html            [a1_]
+    seats/index.html           [a2_]
