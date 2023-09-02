@@ -252,7 +252,7 @@
     // 向左按钮点击事件
     leftBtn.addEventListener('click', () => {
       const lastColData = [];
-      rwo1("right");
+      row1("right");
       for (let i = 0; i < table.rows.length; i++) {
         const lastColInput = table.rows[i].cells[table.rows[i].cells.length - 1].getElementsByTagName('input')[0];
         lastColData.push(lastColInput.value);
