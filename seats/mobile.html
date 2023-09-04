@@ -222,7 +222,7 @@
       var isPhone = /mobile/i.test(info);
       return isPhone;
     }
-    if (IsPhone()==false&&(location.search.length=0)) {
+    if (IsPhone()==false&&(location.search.length==0)) {
       location.replace("https://lxa2.github.io/seats/index.html?from=mobile");
     }
     if (localStorage.hasOwnProperty(`${pageID}update`)) {
