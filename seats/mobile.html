@@ -41,7 +41,7 @@
       padding: 5px;
       border: 1px solid #ccc;
       height: 2.2em;
-      border-bottom: 0;
+      border-top: 0;
     }
 
     input[type="text"] {
@@ -71,7 +71,7 @@
       padding: 5px;
       border: 1px solid #ccc;
       height: 2.2em;
-      border-bottom: 0;
+      border-top: 0;
       width: 30%;
     }
 
@@ -101,14 +101,15 @@
       width: 100%;
       z-index: 1000;
     }
-    .desktopBTN{
-      color: rgb(49, 49, 49);
-      font-size: 2.5em;
-      margin-left: 20%;
+    .desktop{
+      margin-right: 0%;
     }
     .edit-btn {
       background-color: #2196F3;
       margin-top: 30px;
+    }
+    .desktopIMG{
+      width: 15%;
     }
 
     .aaa{
@@ -123,30 +124,9 @@
     <div class="top-bar2">
       <button class="btn edit-btn" id="edit-btn">编辑</button>
       <span class="aaa"><button class="btn edit-btn" onclick="localStorage.clear();alert('恢复默认成功');location.reload();"><span id="text3"></span></button></span>
+      <span class="desktop" onclick="location.replace('./index.html')"><img class="desktopIMG" src="./desktop.png" alt="桌面版"></span>
     </div>
   </div>
-
-  <div class="table-container">
-    <table>
-      <tr>
-        <td class="tbHead"></td>
-        <td class="tbHead" style="text-align: center;font-size: 3em;"><span class="w"></span></td>
-        <td class="tbHead" style="text-align: right;font-size: 2.5em;"><span id="text4"></span></td>
-      </tr>
-    </table>
-    <table id="table0">
-      <tbody>
-        <tr>
-          <td class="f"><input type="text" id="t1" readonly></td>
-          <td class="f"><input type="text" id="t2" readonly></td>
-          <td class="f"><input type="text" id="t3" readonly></td>
-          <td class="f"><input type="text" id="t4" readonly></td>
-          <td class="f"><input type="text" id="t5" readonly></td>
-          <td class="f"><input type="text" id="t6" readonly></td>
-          <td class="f"><input type="text" id="t7" readonly></td>
-        </tr>
-      </tbody>
-    </table>
     <table id="table">
       <tbody>
         <tr>
@@ -214,11 +194,50 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="bottom"><a href="./index.html" class="desktopBTN"><div id="text5"></div></a></div>
+    <table id="table0">
+      <tbody>
+        <tr>
+          <td class="f"><input type="text" id="t1" readonly></td>
+          <td class="f"><input type="text" id="t2" readonly></td>
+          <td class="f"><input type="text" id="t3" readonly></td>
+          <td class="f"><input type="text" id="t4" readonly></td>
+          <td class="f"><input type="text" id="t5" readonly></td>
+          <td class="f"><input type="text" id="t6" readonly></td>
+          <td class="f"><input type="text" id="t7" readonly></td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tr>
+        <td class="tbHead" style="text-align: left;font-size: 2.5em;"><span id="text4"></span></td>
+        <td class="tbHead" style="text-align: center;font-size: 3em;"><span class="w"></span></td>
+        <td class="tbHead"></td>
+      </tr>
+    </table>
   <script>
     var pageID="a2"
     var a1,a2,a6,a7;
+    function IsPhone() {
+      var info = navigator.userAgent;
+      var isPhone = /mobile/i.test(info);
+      return isPhone;
+    }
+    if (IsPhone()==false&&(location.search.length=0)) {
+      location.replace("https://lxa2.github.io/seats/index.html?from=mobile");
+    }
+    if (localStorage.hasOwnProperty(`${pageID}update`)) {
+      if (localStorage.getItem(`${pageID}update`)<2) {
+        localStorage.clear();
+        localStorage.setItem(`${pageID}update`,2)//版本号（2）更新后
+        location.reload();
+        console.log(2);
+      }
+    } else {
+      localStorage.clear();
+      localStorage.setItem(`${pageID}update`,2)//版本号（2）更新后
+      location.reload();
+      console.log(1);
+    }
     function row1(lor) {
       a1=document.getElementById("t1").value;
       a2=document.getElementById("t2").value;
@@ -239,7 +258,8 @@
         localStorage.setItem(`${pageID}row1_${i}`,document.getElementById(`t${i}`).value);
       }
     }
-    const firstRowData = ['范如欣','何亦薇','王一齐','张逸晨','赵佳琪','罗豫','林欣然'];
+    //const firstRowData = ['范如欣','何亦薇','王一齐','张逸晨','赵佳琪','罗豫','林欣然'];
+    const firstRowData = ['林欣然','罗豫','赵佳琪','张逸晨','王一齐','何亦薇','范如欣'];
     if (localStorage.hasOwnProperty(`${pageID}row1_1`)) {
       for (let i = 1; i < 8; i++) {
         document.getElementById(`t${i}`).value=localStorage.getItem(`${pageID}row1_${i}`);
@@ -251,13 +271,20 @@
     }
     // 从localStorage中获取表格数据，如果没有则使用默认数据
     const tableData = JSON.parse(localStorage.getItem(`${pageID}tableData`)) || [
-      ['姚梦蝶', '廖怡', '朱郭瑾', '', '王嘉雯', '顾依凡', '王茵茵'],
-      ['田馨', '韩佳璇', '徐书瑶', '', '耿飞扬', '付饶', '杨嘉雨'],
-      ['金涵蓉', '倪嘉', '袁佳颖', '', '朱佳璐', '许凰倩', '吴钰尧'],
-      ['袁屹辰', '徐敬豪', '吴逸风', '', '陈静怡', '朱思羽', '周徐伟'],
-      ['陈浩', '陆鑫', '孔皓霖', '', '全恒', '高昊阳', '沈奕阳'],
-      ['', '', '李昕翱', '', '刘陆尧', '范沅翰', '杨云帆'],
-      ['', '', '', '', '', '', '']
+      // ['姚梦蝶', '廖怡', '朱郭瑾', '', '王嘉雯', '顾依凡', '王茵茵'],
+      // ['田馨', '韩佳璇', '徐书瑶', '', '耿飞扬', '付饶', '杨嘉雨'],
+      // ['金涵蓉', '倪嘉', '袁佳颖', '', '朱佳璐', '许凰倩', '吴钰尧'],
+      // ['袁屹辰', '徐敬豪', '吴逸风', '', '陈静怡', '朱思羽', '周徐伟'],
+      // ['陈浩', '陆鑫', '孔皓霖', '', '全恒', '高昊阳', '沈奕阳'],
+      // ['', '', '李昕翱', '', '刘陆尧', '范沅翰', '杨云帆'],
+      // ['', '', '', '', '', '', '']
+      ['', '', '', '', '', '', ''],
+      ['杨云帆', '范沅翰', '刘陆尧', '', '李昕翱', '', ''],
+      ['沈奕阳', '高昊阳', '全恒', '', '孔皓霖', '陆鑫', '陈浩'],
+      ['周徐伟', '朱思羽', '陈静怡', '', '吴逸风', '徐敬豪', '袁屹辰'],
+      ['吴钰尧', '许凰倩', '朱佳璐', '', '袁佳颖', '倪嘉', '金涵蓉'],
+      ['杨嘉雨', '付饶', '耿飞扬', '', '徐书瑶', '韩佳璇', '田馨'],
+      ['王茵茵', '顾依凡', '王嘉雯', '', '朱郭瑾', '廖怡', '姚梦蝶']
     ];
     const table = document.getElementById('table');
     const editBtn = document.getElementById('edit-btn');

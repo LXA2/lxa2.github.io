@@ -73,6 +73,12 @@
     #text4::after{
       content: "前门";
     }
+    .mobile{
+      margin-right: 20px;
+    }
+    .mobileIMG{
+      height: 2.5em;
+    }
     .btn {
       display: inline-block;
       margin-right: 6%;
@@ -100,6 +106,7 @@
     <button class="btn" id="left-btn">向右</button>
     <button class="btn edit-btn" id="edit-btn">编辑</button>
     <span class="aaa"><button class="btn edit-btn" onclick="localStorage.clear();alert('恢复默认成功');location.reload();">恢复默认</button></span>
+    <span class="mobile" onclick="location.replace('./mobile.html')"><img class="mobileIMG" src="./mobile.png" alt="移动版"></span>
   </div>
 
   <div class="table-container">
@@ -208,6 +215,16 @@
   <script>
     var pageID="a2";
     var a1,a2,a6,a7;
+    function IsPhone() {
+      var info = navigator.userAgent;
+      var isPhone = /mobile/i.test(info);
+      return isPhone;
+    }
+    if (IsPhone()) {
+      if (location.search.length=0) {
+        location.replace("https://lxa2.github.io/seats/mobile.html?from=desktop");
+      }
+    }
     if (localStorage.hasOwnProperty(`${pageID}update`)) {
       if (localStorage.getItem(`${pageID}update`)<2) {
         localStorage.clear();
