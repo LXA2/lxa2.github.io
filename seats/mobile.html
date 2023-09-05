@@ -124,7 +124,7 @@
     <div class="top-bar2">
       <button class="btn edit-btn" id="edit-btn">编辑</button>
       <span class="aaa"><button class="btn edit-btn" onclick="localStorage.clear();alert('恢复默认成功');location.reload();"><span id="text3"></span></button></span>
-      <span class="desktop" onclick="location.replace('./index.html')"><img class="desktopIMG" src="./desktop.png" alt="桌面版"></span>
+      <span class="desktop" onclick="location.replace('https://lxa2.github.io/seats/index.html?from=mobile')"><img class="desktopIMG" src="./desktop.png" alt="桌面版"></span>
     </div>
   </div>
     <table id="table">
@@ -223,7 +223,7 @@
       return isPhone;
     }
     if (IsPhone()==false&&(location.search.length==0)) {
-      location.replace("https://lxa2.github.io/seats/index.html?from=mobile");
+      location.replace("https://lxa2.github.io/seats/index.html?from=mobile&auto=auto");
     }
     if (localStorage.hasOwnProperty(`${pageID}update`)) {
       if (localStorage.getItem(`${pageID}update`)<2) {

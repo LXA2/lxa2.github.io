@@ -106,7 +106,7 @@
     <button class="btn" id="left-btn">向右</button>
     <button class="btn edit-btn" id="edit-btn">编辑</button>
     <span class="aaa"><button class="btn edit-btn" onclick="localStorage.clear();alert('恢复默认成功');location.reload();">恢复默认</button></span>
-    <span class="mobile" onclick="location.replace('./mobile.html')"><img class="mobileIMG" src="./mobile.png" alt="移动版"></span>
+    <span class="mobile" onclick="location.replace('https://lxa2.github.io/seats/mobile.html?from=desktop')"><img class="mobileIMG" src="./mobile.png" alt="移动版"></span>
   </div>
 
   <div class="table-container">
@@ -222,7 +222,7 @@
     }
     if (IsPhone()) {
       if (location.search.length==0) {
-        location.replace("https://lxa2.github.io/seats/mobile.html?from=desktop");
+        location.replace("https://lxa2.github.io/seats/mobile.html?from=desktop&auto=auto");
       }
     }
     if (localStorage.hasOwnProperty(`${pageID}update`)) {
