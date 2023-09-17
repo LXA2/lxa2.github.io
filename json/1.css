@@ -1,0 +1,24 @@
+.input {
+    font-size: 2em;
+    color: rgb(255, 0, 0);
+    width: 100%;
+}
+.but1{
+    width: 5em;
+    font-size: 1.2em;
+}
+span{
+    font-size: 1.5em;
+}
+#text1::before {
+    content: "Card-ID :";
+}
+#text2::before {
+    content: "Generate QR";
+}
+#text3::before {
+    content: "content :";
+}
+#text4::before {
+    content: "Generate QR";
+}
