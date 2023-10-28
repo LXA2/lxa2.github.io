@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>读取txt文件</title>
+    <script src="../jquery.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        $(document).ready(function(){
+            var url = "your_url.txt";
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'text',
+                success: function(data){
+                    $("#content").text(data);
+                },
+                error: function(){
+                    $("#content").text("无法读取文件内容");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
