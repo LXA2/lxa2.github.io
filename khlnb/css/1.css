@@ -20,6 +20,7 @@
 	text-align: center;
 	width: 100%;
 	font-size: 20em;
+	z-index:99999;
 	position:fixed;
 }
 .title4{
@@ -28,6 +29,7 @@
 	text-align: center;
 	width: 100%;
 	font-size: 15em;
+	z-index:99999;
 	position:fixed;
 }
 
