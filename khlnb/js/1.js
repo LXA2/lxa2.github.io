@@ -7,7 +7,7 @@ function iframe() {
   bodyElement.innerHTML = ""; 
   var iframeElement = document.createElement("iframe");
   iframeElement.style.border = "none";  // 设置iframe无边框
-  iframeElement.style.position = "fixed";
+  //iframeElement.style.position = "fixed";
   iframeElement.style.top = "0";
   iframeElement.style.left = "0";
   iframeElement.style.width = "100%";
