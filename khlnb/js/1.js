@@ -3,9 +3,8 @@ function video(){
 }
 function iframe() {
   url="https://space.bilibili.com/347050218";
-  var bodyElement = document.getElementById("bd");
-  bodyElement.innerHTML = "<div class='title'>KHLNB</div><div class='title2'>孔皓霖牛逼!!!!!!</div>";
-  
+  var bodyElement = document.getElementById("bt");
+  bodyElement.innerHTML = ""; 
   var iframeElement = document.createElement("iframe");
   iframeElement.style.border = "none";  // 设置iframe无边框
   iframeElement.style.position = "fixed";
