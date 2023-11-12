@@ -22,15 +22,17 @@
 	font-size: 20em;
 	z-index:99999;
 	position:fixed;
+	pointer-events:none;
 }
 .title4{
-	margin-top: 1%;
+	margin-top: 1em;
 	margin: auto;
 	text-align: center;
 	width: 100%;
 	font-size: 15em;
 	z-index:99999;
 	position:fixed;
+	pointer-events:none;
 }
 
 @keyframes a{	from {font-size: 500em;}
