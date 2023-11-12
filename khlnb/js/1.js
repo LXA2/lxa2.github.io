@@ -4,7 +4,7 @@ function video(){
 function iframe() {
   url="https://space.bilibili.com/347050218";
   var bodyElement = document.getElementById("bd");
-  bodyElement.innerHTML = "";  // 清空body元素的内容
+  bodyElement.innerHTML = "<div class='title'>KHLNB</div><div class='title2'>孔皓霖牛逼!!!!!!</div>";
   
   var iframeElement = document.createElement("iframe");
   iframeElement.style.border = "none";  // 设置iframe无边框
