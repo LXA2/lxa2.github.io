@@ -14,8 +14,24 @@
 	width: 100%;
 	font-size: 15em;
 }
-@keyframes a{
-	from {font-size: 500em;}
+.title3{
+	margin-top: 1%;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	font-size: 20em;
+	position:fixed;
+}
+.title4{
+	margin-top: 1%;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	font-size: 15em;
+	position:fixed;
+}
+
+@keyframes a{	from {font-size: 500em;}
 	to {font-size: 20em;}
 }
 @keyframes a2{
