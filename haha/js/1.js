@@ -4,7 +4,7 @@ function video(){
 function iframe() {
   url="https://space.bilibili.com/539071817";
   var bodyElement = document.getElementById("bd");
-  bodyElement.innerHTML = "<div class='title3'>KHLNB</div><div class='title4'>ZJW!!!!!!</div>"; 
+  bodyElement.innerHTML = "<div class='title3'>CYD</div><div class='title4'>ZJW!!!!!!</div>"; 
   var iframeElement = document.createElement("iframe");
   iframeElement.style.border = "none"; 
   iframeElement.style.position = "fixed";
