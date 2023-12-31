@@ -2,7 +2,7 @@ function video(){
     document.getElementById("bd").innerHTML="hahahahahahahahaha";
 }
 function iframe() {
-  url="https://space.bilibili.com/1704008580";
+  url="https://space.bilibili.com/539071817";
   var bodyElement = document.getElementById("bd");
   bodyElement.innerHTML = "<div class='title3'>KHLNB</div><div class='title4'>ZJW!!!!!!</div>"; 
   var iframeElement = document.createElement("iframe");
