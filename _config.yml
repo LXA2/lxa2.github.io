@@ -1,0 +1,5 @@
+defaults:
+  - scope:
+      path: "tools"
+    values:
+      permalink: /tools/:path/
