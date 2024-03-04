@@ -1,0 +1,117 @@
+<html>
+<head>
+    <style>
+		body{margin:0;padding:0}
+        #setting-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 80px;
+            height: 40px;
+            background-color: #bbbbccaa;
+            border: none;
+            font-size: 20px;
+		border-radius:8px;
+        }
+
+        #setting-div {
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            width: 300px;
+            height: 230px;
+            background-color: #ffffffbb;
+            border: 1px solid black;
+            display: none;
+		border-radius:4px;
+        }
+
+        #url-input {
+            margin: 10px;
+            width: 280px;
+		border-radius:3px;
+        }
+
+        #refresh-button {
+            margin: 10px;
+            width: 80px;
+            height: 40px;
+            background-color: lightgreen;
+            border: none;
+		border-radius:8px;
+        }
+
+        #cancel-button {
+            margin: 10px;
+            width: 80px;
+            height: 40px;
+            background-color: lightcoral;
+            border: none;
+		border-radius:8px;
+        }
+
+        #confirm-button {
+            margin: 10px;
+            width: 80px;
+            height: 40px;
+            background-color: lightyellow;
+            border: none;
+		border-radius:8px;
+        }
+
+        #iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+	div {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+	}
+    </style>
+	<base target="_self"> 
+</head>
+<body>
+    <button id="setting-button" onclick="showSetting()">设置</button>
+    <div id="setting-div">
+    		<div>请输入完整URL（包含http://或https://，比如：https://www.bilibili.com，建议直接在外部浏览器内复制在此处粘贴）</div>
+        <input id="url-input" type="text" placeholder="输入URL" value="https://www.bing.com">
+        <button id="refresh-button" onclick="refreshIframe()">刷新页面</button>
+        <button id="cancel-button" onclick="hideSetting()">退出设置</button>
+        <button id="confirm-button" onclick="confirmURL()">保存设置</button>
+    </div>
+    <iframe id="iframe" src="https://www.bing.com"></iframe>
+    <script>
+        function showSetting() {
+            document.getElementById("setting-div").style.display = "block";
+        }
+
+        function hideSetting() {
+            document.getElementById("setting-div").style.display = "none";
+        }
+
+        function refreshIframe() {
+            var url = document.getElementById("url-input").value;
+            document.getElementById("iframe").src = url;
+        }
+
+        function confirmURL() {
+            var url = document.getElementById("url-input").value;
+            document.getElementById("iframe").src = url;
+            hideSetting();
+        }
+
+        window.onload = function() {
+            showSetting();
+        }
+    </script>
+</body>
+</html>
