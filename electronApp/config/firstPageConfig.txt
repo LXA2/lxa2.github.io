@@ -1,0 +1,9 @@
+{
+url:"https://proton0x00.github.io/test-site/index.html",
+width:800,
+height:600,
+fullscreen:false,
+windowFrame:true,
+windowTopped:false,
+resizeable:true
+}
