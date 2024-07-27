@@ -6,5 +6,7 @@
 "fullscreen":false,
 "windowFrame":true,
 "windowTopped":false,
-"resizable":true
+"resizable":true，
+”devTools“:true,
+“transparant”:false,
 }
