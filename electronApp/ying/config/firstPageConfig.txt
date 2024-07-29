@@ -1,0 +1,12 @@
+{
+"url":"https://proton0x00.github.io/ying/index.html",
+"title":"ying",
+"width":1920,
+"height":1080,
+"fullscreen":true,
+"windowFrame":true,
+"windowTopped":false,
+"resizable":true,
+"devTools":true,
+"transparent":false
+}

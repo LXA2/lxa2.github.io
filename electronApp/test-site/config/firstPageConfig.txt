@@ -1,12 +1,12 @@
 {
 "url":"https://proton0x00.github.io/test-site/index.html",
-"title":"KHL's test-site",
-"width":800,
-"height":600,
+"title":"ying",
+"width":1920,
+"height":1080,
 "fullscreen":false,
 "windowFrame":true,
 "windowTopped":false,
-"resizable":true，
-”devTools“:true,
-“transparant”:false,
+"resizable":true,
+"devTools":true,
+"transparent":false
 }
